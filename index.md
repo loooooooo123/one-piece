@@ -16,5 +16,5 @@
 
 > 代码实例：
 > <div>
->> <span>hello world</span>
+> <span>hello world</span>
 > </div>
