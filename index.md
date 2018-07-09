@@ -22,6 +22,4 @@ img{
 ## 其他代码库
 
  
-<a href="http://www.baijiqian.cn">
- <img src="http://www.baijiqian.cn/uploads\huati\b07b1e10aaa12.jpg" title="我的网站" />
-</a>
+https://v.qq.com/x/page/y0713ce855w.html
