@@ -30,3 +30,5 @@ console.log(num);
 ```
  
 我的网站：http://www.baijiqian.cn
+
+[![](./01.png '百度')](http://www.baidu.com){:target="_blank"}
