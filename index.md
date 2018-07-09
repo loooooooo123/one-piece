@@ -15,4 +15,6 @@
 ## 其他代码库
 
  
-<a href="http://www.baijiqian.cn"><img src="http://www.baijiqian.cn/uploads\huati\b07b1e10aaa12.jpg" title="我的网站" /></a>
+<a href="http://www.baijiqian.cn">
+ <img style="width:200px;height:200px;" src="http://www.baijiqian.cn/uploads\huati\b07b1e10aaa12.jpg" title="我的网站" />
+</a>
