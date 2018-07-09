@@ -14,21 +14,5 @@
 ## 数据库代码库
 ## 其他代码库
 
-代码实例：
-```
-<div>
-<span>hello world</span>
-</div>
-```
-
-```javascript
-var num = 0;
-for (var i = 0; i < 5; i++) {
-    num+=i;
-}
-console.log(num);
-```
  
-我的网站：http://www.baijiqian.cn
-
-[![](./01.png '百度')](http://www.baidu.com){:target="_blank"}
+<a href="http://www.baijiqian.cn"><img src="http://www.baijiqian.cn/uploads\huati\b07b1e10aaa12.jpg" title="我的网站" /></a>
