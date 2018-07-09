@@ -28,3 +28,6 @@ for (var i = 0; i < 5; i++) {
 }
 console.log(num);
 ```
+
+[我的网站][2]{:target="_blank"}
+[2]: http://www.baijiqian.cn   "哈哈网"
