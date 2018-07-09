@@ -1,10 +1,3 @@
-<style>
-img{
- width:200px;
- height:200px;
-}
-</style>
-
 # 技术栈如下：
 ## h5代码库
 ## vue代码库
