@@ -1,3 +1,10 @@
+<style>
+img{
+ width:200px;
+ height:200px;
+}
+</style>
+
 # 技术栈如下：
 ## h5代码库
 ## vue代码库
@@ -16,5 +23,5 @@
 
  
 <a href="http://www.baijiqian.cn">
- <img style="width:200px;height:200px;" src="http://www.baijiqian.cn/uploads\huati\b07b1e10aaa12.jpg" title="我的网站" />
+ <img src="http://www.baijiqian.cn/uploads\huati\b07b1e10aaa12.jpg" title="我的网站" />
 </a>
