@@ -20,7 +20,7 @@ public class GuessingNumbers {
         
         // 用户猜测随机数
         do {
-        	//获取用户输入
+        	//获取控制台的用户输入
             guess = input.nextInt();
             
             //判断猜测结果
