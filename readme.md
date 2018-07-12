@@ -9,7 +9,6 @@
 
 # 后续路线
 ## iview ui/element ui
-## redis
 ## java/ssm/Android
 ## Object-C/iOS
 ## 微信小程序
