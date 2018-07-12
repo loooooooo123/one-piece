@@ -6,7 +6,7 @@ public class GuessingNumbers {
 	
 	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		//获取用户输入
+		//获取控制台的用户输入
         Scanner input = new Scanner(System.in);
         //产生随机数
         int number = (int) (Math.random() * 100);
