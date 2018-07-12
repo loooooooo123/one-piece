@@ -5,8 +5,6 @@
 ## php/ThinkPHP
 ## mysql/mongodb
 
-## —————————————————————————————————————
-
 # 后续路线
 ## iview ui/element ui
 ## java/ssm/Android
