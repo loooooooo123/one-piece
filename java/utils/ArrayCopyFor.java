@@ -19,6 +19,19 @@ public class ArrayCopyFor {
 			System.out.println(v);
 		}
 		
+		//foreach多维数组遍历
+		String[][] str1 = {
+			{"天津大学","南开大学"},
+			{"天津工业大学","天津政法大学","天津医科大学"},
+			{"天津科技大学","天津民航大学"},
+			{"天津理工大学"}
+		};
+		System.out.println("遍历多维数组：");
+		for(String[] v:str1) {
+			for(String v2:v) {
+				System.out.println(v2);
+			}
+		}
 	}
 	
 	//复制一定数量的数组
