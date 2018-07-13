@@ -6,7 +6,6 @@
 ## mysql/mongodb
 
 # 后续路线
-## iview ui/element ui
 ## java/ssm/Android
 ## Object-C/iOS
 ## 微信小程序
@@ -15,6 +14,9 @@
 ## 分布式
 ## linux
 ## nginx
+
+# 其他
+## ## iview ui/element ui
 
 ## ![技术栈](./images/codeimg1.png)
 
