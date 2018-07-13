@@ -1,5 +1,6 @@
 package utils;
 
+//递归例子
 public class Recursion {
 	
 	//递归函数，计算n的y倍
