@@ -67,5 +67,6 @@ public class MaxMinSortDemo {
 	     
 	     return arr;
 	}
+	//提示：也可以使用java提供的sort方法进行排序：java.util.Arrays.sort(arr);
 
 }
