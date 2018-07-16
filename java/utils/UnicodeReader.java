@@ -1,7 +1,26 @@
 package utils;
 import java.io.*;
+import java.nio.charset.Charset;
  
-//封装的读取字符类，解决IO流，读取第一个字符乱码和多一个?号问题
+/* 封装的读取字符类，解决IO流，读取第一个字符乱码和多一个?号问题 
+ * 
+ *  例子：
+ * 	// 文件读取操作，使用封装的读取字符类
+	public static void readCharFromFile() throws IOException {
+		File f  = new File("E:/public_project/java_project/files/test2.txt");  
+        FileInputStream in = new FileInputStream(f);  
+        // 指定读取文件时以UTF-8的格式读取  
+        BufferedReader br = new BufferedReader(new UnicodeReader(new FileInputStream(f), Charset.defaultCharset().name()));
+          
+        String line = br.readLine();  
+        while(line != null)  
+        {  
+            System.out.println(line);  
+            line = br.readLine();  
+        }  
+	}
+ * 
+ * */
 public class UnicodeReader extends Reader {
   PushbackInputStream internalIn;
   InputStreamReader   internalIn2 = null;
