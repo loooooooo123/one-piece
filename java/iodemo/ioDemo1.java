@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 
 import utils.UnicodeReader;
 
-//io操作
+//io操作，读写文件，操作文件/目录等
 public class ioDemo1 {
 
 	public static void main(String[] args) throws IOException {
