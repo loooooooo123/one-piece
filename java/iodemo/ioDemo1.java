@@ -5,7 +5,7 @@ import java.nio.charset.Charset;
 
 import utils.UnicodeReader;
 
-//io操作，读写文件，操作文件/目录等
+//io操作
 public class ioDemo1 {
 
 	public static void main(String[] args) throws IOException {
@@ -21,6 +21,8 @@ public class ioDemo1 {
 		
 		//其他IO操作
 		fileDemo1();
+		
+		readByBufferedInputStream();
 
 	}
 
@@ -114,6 +116,17 @@ public class ioDemo1 {
 		
 		
 	}
+	
+	//使用缓冲流读取文件
+	 public static void readByBufferedInputStream() throws IOException {
+	        File file = new File( "E:/public_project/java_project/files/test.txt");
+	         byte[] byteArray = new byte[( int) file.length()];
+	         //可以在构造参数中传入buffer大小
+	        InputStream is = new BufferedInputStream( new FileInputStream(file),2*1024);
+	         int size = is.read( byteArray);
+	        System. out.println( "大小:" + size + ";内容:" + new String(byteArray));
+	         is.close();
+	  }
 
 }
 
