@@ -11,8 +11,12 @@ public class Users {
 	private String phone;
 
 	// 构造方法
-	public Users() {
-		
+	public Users(String username,String sex,int age,String job,String phone) {
+		this.username=username;
+		this.sex=sex;
+		this.age=age;
+		this.job=job;
+		this.phone=phone;
 	}
 
 	public static void main(String[] args) {

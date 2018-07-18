@@ -3,7 +3,7 @@ package iodemo;
 import java.io.*;
 import java.nio.charset.Charset;
 
-import utils.UnicodeReader;
+import Basics.UnicodeReader;
 
 //io²Ù×÷
 public class ioDemo1 {

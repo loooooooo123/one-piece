@@ -8,12 +8,7 @@ public class listDemo {
 	
 	//设置用户信息
 	public static Users setUsers(String name,String sex,int age,String job,String phone) {
-		Users users = new Users();
-		users.setUsername(name);
-		users.setSex(sex);
-		users.setAge(age);
-		users.setJob(job);
-		users.setPhone(phone);
+		Users users = new Users(name,sex,age,job,phone);
 		return users;
 	}
 	
