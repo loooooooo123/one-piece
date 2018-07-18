@@ -2,6 +2,8 @@ package listMapSetExp;
 
 import java.util.*;
 
+import base.Users;
+
 //map集合
 public class mapDemo {
 
@@ -17,6 +19,10 @@ public class mapDemo {
 		
 		// map的遍历，不能直接遍历，必须用keySet()和values()方法来遍历
 		MapforDemo();
+		
+		//哈希map的键为一个对象
+		mapDemo1();
+		
 	}
 
 	// map集合操作
@@ -98,5 +104,25 @@ public class mapDemo {
 			System.out.println(value1);
 		}
 	}
+	
+	//哈希map的键为一个对象
+	public static void mapDemo1() {
+		HashMap<Users,String> hm = new HashMap();
+		
+		Users user1 = new Users("李芬","女",26,"女神","18522688588");
+		hm.put(user1, "北京");
+		hm.put(user1, "上海");
+		hm.put(new Users("李芬","女",26,"女神","18522688588"), "深圳");
+		
+		// 实例化keySet集合的迭代器
+		Collection<String> valueset = hm.values();
+		Iterator<String> valueIt = valueset.iterator();
+		while (valueIt.hasNext()) { // 遍历key集合的元素
+			String value1 = valueIt.next(); // 每次键指向下一个元素
+			System.out.println(value1);
+		}
+	}
+	
+	
 
 }
