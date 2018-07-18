@@ -1,4 +1,4 @@
-package lianshou1;
+package interfaceExp;
 
 //½Ó¿Ú²âÊÔ
 public class InterfaceDemo implements demo_one,demo_two{

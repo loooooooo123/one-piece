@@ -1,4 +1,4 @@
-package utils;
+package Basics;
 
 //×Ö·û´®²Ù×÷Àà
 public class StringClassDemo {

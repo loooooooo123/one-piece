@@ -1,4 +1,4 @@
-package utils;
+package Basics;
 
 /*
  * 单例设计模式

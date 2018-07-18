@@ -1,4 +1,4 @@
-package utils;
+package Basics;
 
 //¸¸Àà
 public class ParentClass {

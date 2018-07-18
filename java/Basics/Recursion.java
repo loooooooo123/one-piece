@@ -1,4 +1,4 @@
-package utils;
+package Basics;
 
 //µİ¹éÀı×Ó
 public class Recursion {

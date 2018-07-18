@@ -1,4 +1,4 @@
-package utils;
+package Basics;
 import java.util.Arrays;
 
 //×ÓÀà ¼Ì³Ğ ¸¸Àà

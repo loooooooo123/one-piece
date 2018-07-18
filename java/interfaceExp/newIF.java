@@ -1,4 +1,4 @@
-package lianshou1;
+package interfaceExp;
 
 //½Ó¿Ú1
 interface demo_one{

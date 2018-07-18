@@ -1,4 +1,4 @@
-package lianshou1;
+package interfaceExp;
 
 public class interfaceDemoUse {
 

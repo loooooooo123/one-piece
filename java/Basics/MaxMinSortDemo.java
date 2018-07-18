@@ -1,4 +1,4 @@
-package utils;
+package Basics;
 
 //求最大值，最小值，冒泡排序
 public class MaxMinSortDemo {
