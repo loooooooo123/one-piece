@@ -9,39 +9,36 @@
     parUl.width(all_li_width + lidom.eq(0).outerWidth()).height(all_li_height);
 
     var imgScrollDemo = function () {
-        //左运动
+
+        //防止多次重复点击
         var flag = false;
-        $("#rightNext").click(function () {
 
-            if (flag) {
-                return;
-            }
-            if ((parUl.offset().left - parUl.parent().width()) <= -parUl.outerWidth()) {
-                parUl.stop().animate({"left": "0px"}, 1300);
-            } else {
-                parUl.stop().animate({"left": "-=" + parUl.parent().width() + "px"}, 1300);
-            }
-            flag = true;
-            setTimeout(function () {
-                flag = false;
-            }, 1500);
-        });
-        //右运动
-        $("#leftPrev").click(function () {
+        //移动
+        $(".imgScrollDemo_btn").click(function () {
+            //防止多次重复点击
             if (flag) {
                 return;
             }
 
-            if (parUl.offset().left + lidom.eq(0).outerWidth() >= 0) {
-                parUl.stop().animate({"left": "0px"}, 1300);
-            } else {
-                parUl.stop().animate({"left": "+=" + parUl.parent().width() + "px"}, 1300);
+            if ($(this).attr("type") == "left") {
+                if ((parUl.offset().left - parUl.parent().width()) <= -parUl.outerWidth()) {
+                    parUl.stop().animate({"left": "0px"}, 1300);
+                } else {
+                    parUl.stop().animate({"left": "-=" + parUl.parent().width() + "px"}, 1300);
+                }
+            } else if ($(this).attr("type") == "right") {
+                if (parUl.offset().left + lidom.eq(0).outerWidth() >= 0) {
+                    parUl.stop().animate({"left": "0px"}, 1300);
+                } else {
+                    parUl.stop().animate({"left": "+=" + parUl.parent().width() + "px"}, 1300);
+                }
             }
 
+            //防止多次重复点击
             flag = true;
             setTimeout(function () {
                 flag = false;
-            }, 1500);
+            }, 1300);
         });
     }
 
