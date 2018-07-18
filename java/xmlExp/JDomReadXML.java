@@ -1,4 +1,4 @@
-package lianshou3;
+package xmlExp;
 
 /*
  * JDOM组件是基于java编写的插件，JDOM=DOM修改优点+SAX读取快有点 ，需要下载JDOM插件并安装

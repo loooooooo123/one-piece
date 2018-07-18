@@ -1,4 +1,4 @@
-package lianshou3;
+package xmlExp;
 
 import java.io.*;
 import javax.xml.parsers.*;

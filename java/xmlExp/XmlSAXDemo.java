@@ -1,4 +1,4 @@
-package lianshou3;
+package xmlExp;
 
 //SAX树形解析，SAX只能读XML，不能修改XML
 import org.xml.sax.*;
