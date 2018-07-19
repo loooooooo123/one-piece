@@ -23,6 +23,9 @@ public class mapDemo {
 		//哈希map的键为一个对象
 		mapDemo1();
 		
+		//使用自定义类统计一个字符串中每个字符出现的次数
+		stringCountDemo();
+		
 	}
 
 	// map集合操作
@@ -123,6 +126,20 @@ public class mapDemo {
 		}
 	}
 	
-	
+	//使用自定义类统计一个字符串中每个字符出现的次数
+	public static void stringCountDemo() {
+		//1.定义一个需要被统计的字符串
+		String str = "aabbbccccddddddddddeeeeedaffffff";
+		
+		//调用统计类
+		mapCountString cs = new mapCountString();
+		HashMap<Character,Integer> hm = cs.strCount(str);
+		
+		//6.打印双列集合获取字符串出现的次数
+		for(Character key : hm.keySet()) {	//hm.keySet()所有键集合
+			//hm.get(key)根据键获取值
+			System.out.println(key + "=" + hm.get(key));
+		}
+	}
 
 }
