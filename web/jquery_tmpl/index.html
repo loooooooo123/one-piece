@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery tmpl模板</title>
+    <style>
+        table {
+            width: 50%;
+        }
+
+        table, td, th {
+            border: 1px solid #cecece;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- tmpl模板1 -->
+<script id="demo" type="text/x-jquery-tmpl">
+        {{each(i,user) users}}
+        <tr>
+            {{tmpl(user) '#demo2'}}
+        </tr>
+        {{/each}}
+
+</script>
+
+<!-- tmpl模板2 -->
+<script id="demo2" type="text/x-jquery-tmpl">
+        <td>${$data.ID}</td>
+        <td>${$data.Name}</td>
+
+</script>
+
+
+<!-- 要插入的dom -->
+<table>
+    <thead>
+    <tr>
+        <th>序号
+        </td>
+        <th>名字</th>
+    </tr>
+    </thead>
+    <tbody id="tbody1">
+
+    </tbody>
+</table>
+
+<!-- 过滤数据，操作数据 $data 和 $item 使用 -->
+<script id="demo3" type="text/x-jquery-tmpl">
+        <p>
+            <span>${name}</span>
+            <span>${age}</span>
+            <span>${money}</span>
+            <span>${$item.fliter1()}</span>
+        </p>
+
+</script>
+
+<div id="div1"></div>
+
+<!-- 引入tmpl模板引擎 -->
+<script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+<script src="jquery.tmpl.min.js"></script>
+<script src="jquery.tmplPlus.min.js"></script>
+
+<!-- tmpl模板使用 -->
+<script type="text/javascript">
+    var userInfo = [
+        {
+            users: [
+                {ID: 'think8848', Name: 'Joseph Chan'},
+                {ID: 'aCloud', Name: 'Mary Cheung'}
+            ],
+            status: 1
+        }
+    ];
+    $('#tbody1').append($("#demo").tmpl(userInfo));
+
+    //过滤数据，操作数据 $data 和 $item 使用
+    var newdata = [
+        {name: "tom", age: 26, money: 2000},
+        {name: "jick", age: 23, money: 5000},
+        {name: "yohan", age: 28, money: 10000},
+    ];
+    $('#div1').append($("#demo3").tmpl(newdata, {
+        fliter1: function () {
+            return this.data.money > 5000 ? "大富豪" : "一般人";
+        }
+    }));
+</script>
+</body>
+
+</html>
