@@ -3,6 +3,7 @@ package JDBCDemo;
 //JavaBean¡ª¡ªUsersÀà
 public class Users {
 	
+	private int id;
 	private String username;
 	private String password;
 	private int age;
@@ -20,6 +21,20 @@ public class Users {
 		this.age=age;
 		this.sex=sex;
 		this.job=job;
+	}
+	
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	/**

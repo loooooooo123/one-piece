@@ -8,21 +8,7 @@ import java.sql.SQLException;
 
 import com.mysql.jdbc.Statement;
 
-/*
- * DBC基本使用
- * 
- *   	
- 基本使用：
-//实例化Conn数据库操作对象
-Statement st = new Conn().getQueryCon();
-
-//sql语句
-String sql1 = "select * from users";
-
-//执行sql语句
-st.executeQuery(sql1);
- * 
- * */
+//JDBC连接类
 public class Conn {
 
 	private static final String URL="jdbc:mysql://localhost:3306/javatest";
