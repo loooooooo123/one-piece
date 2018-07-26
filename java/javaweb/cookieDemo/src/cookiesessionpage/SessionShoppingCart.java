@@ -42,6 +42,30 @@ public class SessionShoppingCart {
 		
 	}
 	
+	//操作购物车商品数量，为0时删除该商品
+	public void shopcartOperation(HttpServletRequest request,HttpServletResponse response,String mid,String flag){
+		//所有商品列表
+		ArrayList<Shop> shoplist1 = shoplist();
+		
+		map = (Map<String, Integer>) request.getSession().getAttribute("cart");
+		
+		//map为空不执行任何操作
+		System.out.println(flag);
+		if(!map.isEmpty()) {
+			//flag参数为true，则减少该商品数量，如果数量为0，则删除该商品
+			if(flag.equals("Y")) {
+				if(map.get(mid)<=1) {
+					map.remove(mid);
+				}else {
+					map.put(mid,map.get(mid)-1);
+				}
+			}else {
+				map.put(mid,map.get(mid)+1);
+			}
+		}
+
+	}
+	
 	public Map<String,Integer> getShoppingCart(){
 		return map;
 	}
