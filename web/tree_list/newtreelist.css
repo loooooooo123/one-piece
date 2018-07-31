@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left {
+    float: left;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 头部标题 */
+.tree_table_header {
+    width: 100%;
+    height: 46px;
+    line-height: 46px;
+    background: #ececec;
+}
+
+.tree_table_td {
+    width: 10%;
+    float: left;
+    text-align: left;
+}
+
+.tree_table_center {
+    text-align: center;
+}
+
+.tree_table_width1 {
+    width: 4%;
+}
+
+.tree_table_width2 {
+    width: 6%;
+    min-width: 100px;
+}
+
+.tree_table_width3 {
+    width: 23%;
+}
+
+.tree_table_width4 {
+    width: 15%;
+}
+
+/* 内容 */
+.tree_ul_one, .tree_ul_two, .tree_ul_three {
+    width: 100%;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+    float: left;
+}
+
+.tree_li {
+    width: 100%;
+    overflow: visible;
+}
+
+.one_line {
+    width: 100%;
+    overflow: visible;
+    padding: 8px 0;
+}
+
+.one_line .bar {
+    color: #adadad;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    line-height: 26px;
+}
+
+.one_line .top_button, .one_line .bottom_button {
+    width: 22px;
+    height: 22px;
+    border-radius: 11px;
+    border: 1px solid #b6b6b6;
+    margin-left: 15px;
+    margin-top: 3px;
+}
+
+.one_line .top_button {
+    margin-left: 25px;
+}
+
+/* 向右三角形 */
+.triangle-top {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 10px solid #b6b6b6;
+    margin: 5px 0 0 5px;
+}
+
+.triangle-bottom {
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 10px solid #b6b6b6;
+    margin: 7px 0 0 5px;
+}
+
+.input_con, .input_no_con {
+    width: 100%;
+}
+
+.input_con_bg {
+    width: 10%;
+    height: 26px;
+}
+
+.input_con_input {
+    width: 60%;
+    height: 32px;
+    line-height: 32px;
+    border: 1px solid #cecece;
+    outline: none;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.input_no_con .input_con_input {
+    background: #cecece;
+}
+
+.input_no_con:nth-child(1) .input_con_input:nth-child(1) {
+    /*overflow-x: auto;*/
+    /*overflow-y:hidden;*/
+    background: none;
+    white-space: nowrap;
+    height: 100%;
+    /*text-overflow: ellipsis;*/
+    overflow: hidden;
+    line-height: 32px;
+    height: 32px;
+}
+
+.input_no_con2 .input_con_input {
+    width: 100%;
+}
+
+.one_line .button1 {
+    font-size: 18px;
+    margin: 0 0 0 15px;
+    line-height: 35px;
+    min-width: 50px;
+}
+
+.color_blue {
+    color: rgb(37, 95, 221)
+}
+
+.color_red {
+    color: rgb(221, 37, 37)
+}
+
+/* 1级菜单 */
+.tree_ul_one .input_con_bg {
+    display: none;
+}
+
+/* 2级，3级 菜单 */
+.tree_ul_two .input_con_bg, .tree_ul_three .input_con_bg {
+    display: block;
+}
+
+.tree_ul_three .input_con_bg {
+    width: 20%;
+}
+
+.tree_ul_two .input_no_con .input_con_input {
+    margin-left: 10%;
+}
+
+.tree_ul_three .input_no_con .input_con_input {
+    margin-left: 20%;
+}
+
+.tree_ul_two .input_no_con2 .input_con_input {
+    margin-left: 0;
+}
+
+.tree_ul_three .input_no_con2 .input_con_input {
+    margin-left: 0;
+}
+
+.tree_ul_three .bar {
+    visibility: hidden;
+}
+
+/* 二级,三级树形图标 */
+.tree_ul_two .input_con_bg, .tree_ul_three .input_con_bg {
+    background: url("images/tree_two_bg.png") no-repeat;
+    text-indent: 9999px;
+    overflow: hidden;
+}
+
+.tree_ul_three .input_con_bg {
+    background: url("images/tree_three_bg.png") 22px 0 no-repeat;
+}
+
+.one_line .notextMar1 {
+    margin-left: 46px;
+}
+
+/* 20180727 */
+.treeRele1 {
+    width: 100%;
+    height: auto;
+    position: relative;
+    overflow: visible;
+}
+
+/* 新增拉下菜单 */
+.treeAddNav1 {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-44%);
+    width: 80px;
+    height: auto;
+    background: white;
+    border: 1px solid #cecece;
+    padding: 5px 0;
+    display: none;
+    z-index: 99;
+}
+
+.treeAddNav1 a.button1 {
+    display: block;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    margin-left: 0;
+    font-size: 14px;
+    color: rgb(73, 72, 72);
+}

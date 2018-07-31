@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>树形导航</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.14/vue.min.js"></script>
+    <link rel="stylesheet" href="newtreelist.css">
+</head>
+
+<body>
+<div id="par1">
+    <div class="con1">
+        <div class="tree_table_header">
+            <div class="tree_table_td tree_table_width1 tree_table_center">&nbsp;</div>
+            <div class="tree_table_td tree_table_width2 tree_table_center">排序</div>
+            <div class="tree_table_td tree_table_width3">展现品类</div>
+            <div class="tree_table_td tree_table_width3">管理品类</div>
+            <div class="tree_table_td tree_table_width3">品类URL</div>
+            <div class="tree_table_td tree_table_width4 tree_table_center">操作</div>
+        </div>
+        <div class="tree_table_con">
+
+            <!-- 一级 -->
+            <ul class="tree_ul_one" v-for="(val1,index1) in list">
+
+                <li class="tree_li">
+                    <div class="one_line">
+                        <div class="tree_table_td tree_table_width1 tree_table_center">
+                            <div class="bar left cursor" @click="listShow($event,1)">[-]</div>
+                        </div>
+                        <div class="tree_table_td tree_table_width2 tree_table_center">
+                            <div class="info left">
+                                <div class="top_button left cursor">
+                                    <div class="triangle-top" @click="listTop(index1)"></div>
+                                </div>
+                                <div class="bottom_button left cursor">
+                                    <div class="triangle-bottom" @click="listBottom(index1)"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tree_table_td tree_table_width3">
+                            <div class="input_con left">
+                                <div class="input_con_bg left">1</div>
+                                <input type="text left" class="input_con_input" @keyup="treeInput($(event),'n',index1)"
+                                       :value="val1.name"/>
+                            </div>
+                        </div>
+                        <div class="tree_table_td tree_table_width3">
+                            <div class="input_no_con left">
+                                <input type="text left" class="input_con_input" @keyup="treeInput($(event),'cn',index1)"
+                                       :value="val1.cname"/>
+                            </div>
+                        </div>
+                        <div class="tree_table_td tree_table_width3">
+                            <div class="input_no_con input_no_con2 left">
+                                <input type="text left" class="input_con_input" @keyup="treeInput($(event),'u',index1)"
+                                       :title="val1.url" :value="val1.url"
+                                        />
+                            </div>
+                        </div>
+                        <div class="tree_table_td tree_table_width4 tree_table_center">
+                            <div class="treeRele1">
+                                <a href="javascript:void(0);" class="button1 color_blue cursor">聚合</a>
+                                <a href="javascript:void(0);" class="button1 color_blue cursor"
+                                   @click="addTreeFn($event)">新增</a>
+                                <a href="javascript:void(0);" class="button1 color_red cursor deltree"
+                                   @click="listDelete(index1)">删除</a>
+
+                                <div class="treeAddNav1" :style="'z-index:99'+index1">
+                                    <a href="javascript:void(0);" class="button1 color_blue cursor"
+                                       @click="addTreeListFn(1,index1)">新增同级</a>
+                                    <a href="javascript:void(0);" class="button1 color_blue cursor"
+                                       @click="addTreeListFn(0,index1)">新增下级</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="tree_ul_two" v-for="(val2,index2) in val1.child">
+
+                        <li class="tree_li">
+
+                            <div class="one_line">
+                                <div class="tree_table_td tree_table_width1 tree_table_center">
+                                    <div class="bar left cursor" @click="listShow($event,2)">[-]</div>
+                                </div>
+                                <div class="tree_table_td tree_table_width2 tree_table_center">
+                                    <div class="info left">
+                                        <div class="top_button left cursor">
+                                            <div class="triangle-top" @click="listTop(index1,index2)"></div>
+                                        </div>
+                                        <div class="bottom_button left cursor">
+                                            <div class="triangle-bottom" @click="listBottom(index1,index2)"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tree_table_td tree_table_width3">
+                                    <div class="input_con left">
+                                        <div class="input_con_bg left">1</div>
+                                        <input type="text left" class="input_con_input"
+                                               @keyup="treeInput($(event),'n',index1,index2)" :value="val2.name"/>
+                                    </div>
+                                </div>
+                                <div class="tree_table_td tree_table_width3">
+                                    <div class="input_no_con left">
+                                        <input type="text left" class="input_con_input"
+                                               @keyup="treeInput($(event),'cn',index1,index2)" :value="val2.cname"/>
+                                    </div>
+                                </div>
+                                <div class="tree_table_td tree_table_width3">
+                                    <div class="input_no_con input_no_con2 left">
+                                        <input type="text left" class="input_con_input"
+                                               @keyup="treeInput($(event),'u',index1,index2)" :title="val2.url"
+                                               :value="val2.url"/>
+                                    </div>
+                                </div>
+                                <div class="tree_table_td tree_table_width4 tree_table_center">
+                                    <div class="treeRele1">
+                                        <a href="javascript:void(0);" class="button1 color_blue cursor">聚合</a>
+                                        <a href="javascript:void(0);" class="button1 color_blue cursor"
+                                           @click="addTreeFn($event)">新增</a>
+                                        <a href="javascript:void(0);" class="button1 color_red cursor deltree"
+                                           @click="listDelete(index1,index2)">删除</a>
+
+                                        <div class="treeAddNav1" :style="'z-index:99'+index1*2">
+                                            <a href="javascript:void(0);" class="button1 color_blue cursor"
+                                               @click="addTreeListFn(1,index1,index2)">新增同级</a>
+                                            <a href="javascript:void(0);" class="button1 color_blue cursor"
+                                               @click="addTreeListFn(0,index1,index2)">新增下级</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <ul class="tree_ul_three" v-for="(val3,index3) in val2.child">
+
+                                <li class="tree_li">
+                                    <div class="one_line">
+                                        <div class="tree_table_td tree_table_width1 tree_table_center">
+                                            <div class="bar left cursor">[-]</div>
+                                        </div>
+                                        <div class="tree_table_td tree_table_width2 tree_table_center">
+                                            <div class="info left">
+                                                <div class="top_button left cursor">
+                                                    <div class="triangle-top"
+                                                         @click="listTop(index1,index2,index3)"></div>
+                                                </div>
+                                                <div class="bottom_button left cursor">
+                                                    <div class="triangle-bottom"
+                                                         @click="listBottom(index1,index2,index3)"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tree_table_td tree_table_width3">
+                                            <div class="input_con left">
+                                                <div class="input_con_bg left">1</div>
+                                                <input type="text left" class="input_con_input"
+                                                       @keyup="treeInput($(event),'n',index1,index2,index3)"
+                                                       :value="val3.name"/>
+                                            </div>
+                                        </div>
+                                        <div class="tree_table_td tree_table_width3">
+                                            <div class="input_no_con left">
+                                                <input type="text left" class="input_con_input"
+                                                       @keyup="treeInput($(event),'cn',index1,index2,index3)"
+                                                       :value="val3.cname"/>
+                                            </div>
+                                        </div>
+                                        <div class="tree_table_td tree_table_width3">
+                                            <div class="input_no_con input_no_con2 left">
+                                                <input type="text left" class="input_con_input"
+                                                       @keyup="treeInput($(event),'u',index1,index2,index3)"
+                                                       :title="val3.url" :value="val3.url"/>
+                                            </div>
+                                        </div>
+                                        <div class="tree_table_td tree_table_width4 tree_table_center">
+                                            <a href="javascript:void(0);" class="button1 color_blue cursor">聚合</a>
+                                            <a href="javascript:void(0);" class="button1 color_red cursor deltree"
+                                               @click="listDelete(index1,index2,index3)">删除</a>
+                                        </div>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    var vue1 = new Vue({
+        el: "#par1",
+        methods: {
+            //展开收缩
+            listShow: function (e, flag) {
+
+                //切换状态
+                function toggleText1() {
+                    if ($(e.target).text() == "[+]") {
+                        $(e.target).text("[-]");
+                    } else {
+                        $(e.target).text("[+]");
+                    }
+                }
+
+                if (flag == 1) {
+                    $(e.target).closest('.one_line').nextAll(".tree_ul_two").toggle(function () {
+                    });
+                    toggleText1();
+                } else {
+                    $(e.target).closest('.one_line').nextAll(".tree_ul_three").toggle(function () {
+                    });
+                    toggleText1();
+                }
+            },
+            //列表向上
+            listTop: function () {
+
+                //二级
+                if (arguments.length == 2) {
+
+                    if (arguments[1] == 0) {
+                        alert('到顶了');
+                        return;
+                    }
+
+
+                    //当前数据
+                    var t = this.clone_new(this.list[arguments[0]].child[arguments[1]]);
+                    //上一条数据
+                    var nt = this.clone_new(this.list[arguments[0]].child[arguments[1] - 1]);
+
+                    //互换位置
+                    this.list[arguments[0]].child[arguments[1]].child = nt.child;
+                    this.list[arguments[0]].child[arguments[1]].id = nt.id;
+                    this.list[arguments[0]].child[arguments[1]].name = nt.name;
+                    this.list[arguments[0]].child[arguments[1]].cname = nt.cname;
+                    this.list[arguments[0]].child[arguments[1]].url = nt.url;
+                    this.list[arguments[0]].child[arguments[1]].type = nt.type;
+                    this.list[arguments[0]].child[arguments[1] - 1].child = t.child;
+                    this.list[arguments[0]].child[arguments[1] - 1].id = t.id;
+                    this.list[arguments[0]].child[arguments[1] - 1].name = t.name;
+                    this.list[arguments[0]].child[arguments[1] - 1].cname = t.cname;
+                    this.list[arguments[0]].child[arguments[1] - 1].url = t.url;
+                    this.list[arguments[0]].child[arguments[1] - 1].type = t.type;
+                } else if (arguments.length == 3) {  //三级
+
+                    if (arguments[2] == 0) {
+                        alert('到顶了');
+                        return;
+                    }
+
+                    //当前数据
+                    var t = this.clone_new(this.list[arguments[0]].child[arguments[1]].child[arguments[2]]);
+                    //上一条数据
+                    var nt = this.clone_new(this.list[arguments[0]].child[arguments[1]].child[arguments[2] - 1]);
+                    //互换位置
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].child = nt.child;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].id = nt.id;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].name = nt.name;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].cname = nt.cname;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].url = nt.url;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].type = nt.type;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] - 1].child = t.child;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] - 1].id = t.id;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] - 1].name = t.name;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] - 1].cname = t.cname;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] - 1].url = t.url;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] - 1].type = t.type;
+                } else {  //一级
+
+                    if (arguments[0] == 0) {
+                        alert('到顶了');
+                        return;
+                    }
+
+                    //当前数据
+                    var t = this.clone_new(this.list[arguments[0]]);
+                    //上一条数据
+                    var nt = this.clone_new(this.list[arguments[0] - 1]);
+                    //互换位置
+                    this.list[arguments[0]].child = nt.child;
+                    this.list[arguments[0]].id = nt.id;
+                    this.list[arguments[0]].name = nt.name;
+                    this.list[arguments[0]].cname = nt.cname;
+                    this.list[arguments[0]].url = nt.url;
+                    this.list[arguments[0]].type = nt.type;
+                    this.list[arguments[0] - 1].child = t.child;
+                    this.list[arguments[0] - 1].id = t.id;
+                    this.list[arguments[0] - 1].name = t.name;
+                    this.list[arguments[0] - 1].cname = t.cname;
+                    this.list[arguments[0] - 1].url = t.url;
+                    this.list[arguments[0] - 1].type = t.type;
+                }
+            },
+            //列表向下
+            listBottom: function () {
+
+                //二级
+                if (arguments.length == 2) {
+
+                    if ((arguments[1] + 1) >= this.list[arguments[0]].child.length) {
+                        alert('到底了');
+                        return;
+                    }
+
+                    //当前数据
+                    var t = this.clone_new(this.list[arguments[0]].child[arguments[1]]);
+                    //上一条数据
+                    var nt = this.clone_new(this.list[arguments[0]].child[arguments[1] + 1]);
+
+                    //互换位置
+                    this.list[arguments[0]].child[arguments[1]].child = nt.child;
+                    this.list[arguments[0]].child[arguments[1]].id = nt.id;
+                    this.list[arguments[0]].child[arguments[1]].name = nt.name;
+                    this.list[arguments[0]].child[arguments[1]].cname = nt.cname;
+                    this.list[arguments[0]].child[arguments[1]].url = nt.url;
+                    this.list[arguments[0]].child[arguments[1]].type = nt.type;
+                    this.list[arguments[0]].child[arguments[1] + 1].child = t.child;
+                    this.list[arguments[0]].child[arguments[1] + 1].id = t.id;
+                    this.list[arguments[0]].child[arguments[1] + 1].name = t.name;
+                    this.list[arguments[0]].child[arguments[1] + 1].cname = t.cname;
+                    this.list[arguments[0]].child[arguments[1] + 1].url = t.url;
+                    this.list[arguments[0]].child[arguments[1] + 1].type = t.type;
+                } else if (arguments.length == 3) {  //三级
+
+                    if ((arguments[2] + 1) >= this.list[arguments[0]].child[arguments[1]].child.length) {
+                        alert('到底了');
+                        return;
+                    }
+
+                    //当前数据
+                    var t = this.clone_new(this.list[arguments[0]].child[arguments[1]].child[arguments[2]]);
+                    //上一条数据
+                    var nt = this.clone_new(this.list[arguments[0]].child[arguments[1]].child[arguments[2] + 1]);
+                    //互换位置
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].child = nt.child;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].id = nt.id;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].name = nt.name;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].cname = nt.cname;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].url = nt.url;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2]].type = nt.type;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] + 1].child = t.child;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] + 1].id = t.id;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] + 1].name = t.name;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] + 1].cname = t.cname;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] + 1].url = t.url;
+                    this.list[arguments[0]].child[arguments[1]].child[arguments[2] + 1].type = t.type;
+                } else {  //一级
+
+                    if ((arguments[0] + 1) >= this.list.length) {
+                        alert('到底了');
+                        return;
+                    }
+
+                    //当前数据
+                    var t = this.clone_new(this.list[arguments[0]]);
+                    //上一条数据
+                    var nt = this.clone_new(this.list[arguments[0] + 1]);
+                    //互换位置
+                    this.list[arguments[0]].child = nt.child;
+                    this.list[arguments[0]].id = nt.id;
+                    this.list[arguments[0]].name = nt.name;
+                    this.list[arguments[0]].cname = nt.cname;
+                    this.list[arguments[0]].url = nt.url;
+                    this.list[arguments[0]].type = nt.type;
+                    this.list[arguments[0] + 1].child = t.child;
+                    this.list[arguments[0] + 1].id = t.id;
+                    this.list[arguments[0] + 1].name = t.name;
+                    this.list[arguments[0] + 1].cname = t.cname;
+                    this.list[arguments[0] + 1].url = t.url;
+                    this.list[arguments[0] + 1].type = t.type;
+                }
+            },
+            //列表删除
+            listDelete: function () {
+
+                if (arguments.length == 1) {
+                    this.list.splice(arguments[0], 1);
+                } else if (arguments.length == 2) {
+                    this.list[arguments[0]].child = null;
+                } else if (arguments.length == 3) {
+                    this.list[arguments[0]].child[arguments[1]].child.splice(arguments[2], 1);
+                }
+            },
+            //列表新增弹出框
+            addTreeFn: function (e) {
+                var dom1 = $(e.target).closest('.treeRele1').find(".treeAddNav1");
+
+                //预先隐藏其他
+                $(".treeAddNav1").hide();
+
+                //绑定整个dom
+                $(document).click(function (e) {
+                    //如果点击的元素父级不是 .liveroom_sendgift 则隐藏
+                    if ($((e.target || e.srcElement)).closest(".treeRele1").length == 0) {
+                        dom1.hide(); //要显示隐藏的节点
+                    }
+                });
+
+                dom1.toggle(function () {
+                });
+            },
+            //列表新增数据
+            addTreeListFn: function () {
+
+                //一级新增
+                if (arguments.length == 2) {
+
+                    if (arguments[0] == 1) {    //同级
+                        this.list.splice(arguments[1] + 1, 0, {   //新增数据
+                            "child": [],
+                            "id": "",
+                            "name": "",
+                            "cname": "",
+                            "url": "",
+                            "type": 0
+                        });
+                    } else {  //下级
+                        this.list[arguments[1]].child.push({   //新增数据
+                            "child": [],
+                            "id": "",
+                            "name": "",
+                            "cname": "",
+                            "url": "",
+                            "type": 0
+                        });
+                    }
+
+                    //隐藏新增弹层
+                    $(".treeAddNav1").hide();
+                } else if (arguments.length == 3) {  //二级新增
+
+                    if (arguments[0] == 1) {    //同级
+                        this.list[arguments[1]].child.splice(arguments[2] - 1, 0, {   //新增数据
+                            "child": [],
+                            "id": "",
+                            "name": "",
+                            "cname": "",
+                            "url": "",
+                            "type": 0
+                        });
+                    } else {  //下级
+                        this.list[arguments[1]].child[arguments[2]].child.push({   //新增数据
+                            "child": [],
+                            "id": "",
+                            "name": "",
+                            "cname": "",
+                            "url": "",
+                            "type": 0
+                        });
+                    }
+
+                    //隐藏新增弹层
+                    $(".treeAddNav1").hide();
+                }
+            },
+            //输入新数据更新列表
+            treeInput: function () {
+                //一级
+                if (arguments.length == 3) {
+                    if (arguments[1] == 'n') {
+                        this.list[arguments[2]].name = $(arguments[0][0].target).val();
+                    } else if (arguments[1] == 'cn') {
+                        this.list[arguments[2]].cname = $(arguments[0][0].target).val();
+                    } else if (arguments[1] == 'u') {
+                        this.list[arguments[2]].url = $(arguments[0][0].target).val();
+                    }
+                } else if (arguments.length == 4) {  //二级
+                    if (arguments[1] == 'n') {
+                        this.list[arguments[2]].child[arguments[3]].name = $(arguments[0][0].target).val();
+                    } else if (arguments[1] == 'cn') {
+                        this.list[arguments[2]].child[arguments[3]].cname = $(arguments[0][0].target).val();
+                    } else if (arguments[1] == 'u') {
+                        this.list[arguments[2]].child[arguments[3]].url = $(arguments[0][0].target).val();
+                    }
+                } else {  //三级
+                    if (arguments[1] == 'n') {
+                        this.list[arguments[2]].child[arguments[3]].child[arguments[4]].name = $(arguments[0][0].target).val();
+                    } else if (arguments[1] == 'cn') {
+                        this.list[arguments[2]].child[arguments[3]].child[arguments[4]].cname = $(arguments[0][0].target).val();
+                    } else if (arguments[1] == 'u') {
+                        this.list[arguments[2]].child[arguments[3]].child[arguments[4]].url = $(arguments[0][0].target).val();
+                    }
+                }
+            },
+            //对象克隆
+            clone_new: function (obj) {
+                let temp = null;
+                if (obj instanceof Array) {
+                    temp = obj.concat();
+                } else if (obj instanceof Function) {
+                    //函数是共享的是无所谓的，js也没有什么办法可以在定义后再修改函数内容
+                    temp = obj;
+                } else {
+                    temp = new Object();
+                    for (let item in obj) {
+                        let val = obj[item];
+                        temp[item] = typeof val == 'object' ? this.clone_new(val) : val; //这里也没有判断是否为函数，因为对于函数，我们将它和一般值一样处理
+                    }
+                }
+                return temp;
+            }
+        },
+        data: {
+            list: [ //列表数据
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [],
+                                    "id": "硒鼓（零星）",
+                                    "name": "硒鼓（零星）",
+                                    "cname": "硒鼓（零星）",
+                                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NTZHUzZieVQ3N3lJNlp1MjVwaWY3N3lK&chanel=15&mSite=MjEwNTE=",
+                                    "type": 3
+                                }
+                            ],
+                            "id": "办公耗材（零星）",
+                            "name": "办公耗材（零星）",
+                            "cname": "办公耗材（零星）",
+                            "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NVlxZTVZV3M2SUNYNXAyUTc3eUk2WnUyNXBpZjc3eUo=&chanel=15&mSite=MjEwNTE=",
+                            "type": 2
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [],
+                                    "id": "硒鼓（零星）222",
+                                    "name": "硒鼓（零星）222",
+                                    "cname": "硒鼓（零星）222222",
+                                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NTZHUzZieVQ3N3lJNlp1MjVwaWY3N3lK&chanel=15&mSite=MjEwNTE=",
+                                    "type": 3
+                                }
+                            ],
+                            "id": "办公耗材（零星）",
+                            "name": "办公耗材（零星）",
+                            "cname": "办公耗材（零星）",
+                            "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NVlxZTVZV3M2SUNYNXAyUTc3eUk2WnUyNXBpZjc3eUo=&chanel=15&mSite=MjEwNTE=",
+                            "type": 2
+                        }
+                    ],
+                    "id": "办公用品（零星）",
+                    "name": "办公用品（零星）",
+                    "cname": "办公用品（零星）",
+                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NVlxZTVZV3M1NVNvNVpPQjc3eUk2WnUyNXBpZjc3eUo=&chanel=15&mSite=MjEwNTE=",
+                    "type": 1
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [],
+                                    "id": "文文测试00",
+                                    "name": "文文测试02",
+                                    "cname": "文文测试00",
+                                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NXBhSDVwYUg1cldMNksrVk1EQT0=&chanel=15&mSite=MjEwNTE=",
+                                    "type": 3
+                                },
+                                {
+                                    "child": [],
+                                    "id": "文文测试01",
+                                    "name": "文文测试01",
+                                    "cname": "文文测试01",
+                                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NXBhSDVwYUg1cldMNksrVk1ERT0=&chanel=15&mSite=MjEwNTE=",
+                                    "type": 3
+                                }
+                            ],
+                            "id": "文文测试0",
+                            "name": "文文测试0",
+                            "cname": "文文测试0",
+                            "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NXBhSDVwYUg1cldMNksrVk1BPT0=&chanel=15&mSite=MjEwNTE=",
+                            "type": 2
+                        },
+                        {
+                            "child": [
+                                {
+                                    "child": [],
+                                    "id": "文文测试00 22222222222222222222",
+                                    "name": "文文测试02 22222222222222222",
+                                    "cname": "文文测试00 222222222222222222222222",
+                                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NXBhSDVwYUg1cldMNksrVk1EQT0=&chanel=15&mSite=MjEwNTE=",
+                                    "type": 3
+                                },
+                                {
+                                    "child": [],
+                                    "id": "文文测试01 33333333333333333333",
+                                    "name": "文文测试01 3333333333333333333",
+                                    "cname": "文文测试01 333333333333333333333",
+                                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NXBhSDVwYUg1cldMNksrVk1ERT0=&chanel=15&mSite=MjEwNTE=",
+                                    "type": 3
+                                }
+                            ],
+                            "id": "文文测试0 22222222222222222222",
+                            "name": "文文测试0 22222222222222222222",
+                            "cname": "文文测试0 22222222222222222222",
+                            "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NXBhSDVwYUg1cldMNksrVk1BPT0=&chanel=15&mSite=MjEwNTE=",
+                            "type": 2
+                        }
+                    ],
+                    "id": "文文测试品类",
+                    "name": "文文测试品类",
+                    "cname": "文文测试品类",
+                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NXBhSDVwYUg1cldMNksrVjVaT0I1N0c3&chanel=15&mSite=MjEwNTE=",
+                    "type": 1
+                },
+                {
+                    "child": [
+                        {
+                            "child": [
+                                {
+                                    "child": [],
+                                    "id": "票据夹",
+                                    "name": "票据夹",
+                                    "cname": "票据夹",
+                                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NTZXbzVvMnU1YVM1&chanel=15&mSite=MjEwNTE=",
+                                    "type": 3
+                                }
+                            ],
+                            "id": "财务用品",
+                            "name": "财务用品",
+                            "cname": "财务用品",
+                            "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NkxTaTVZcWg1NVNvNVpPQg==&chanel=15&mSite=MjEwNTE=",
+                            "type": 2
+                        }
+                    ],
+                    "id": "办公用品",
+                    "name": "办公用品",
+                    "cname": "办公用品",
+                    "url": "http://b.esgmallt.com/sortSearch/showSearchPage?q=NVlxZTVZV3M1NVNvNVpPQg==&chanel=15&mSite=MjEwNTE=",
+                    "type": 1
+                }
+            ]
+        }
+    });
+</script>
+</body>
+
+</html>
