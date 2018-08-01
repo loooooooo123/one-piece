@@ -1,0 +1,27 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首台首页</title>
+    <link rel="stylesheet" href="/tp3_auth/Public/css/bootstrap.min.css">
+    <style>
+        .con{
+            width:100%;
+            height:100%;
+            border:1px solid #e8e8e8;
+            padding:0 20px;
+            box-sizing: border-box;
+            min-height: 500px;
+        }
+        h4{
+            border-bottom:1px solid #e8e8e8;
+            line-height:40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <h4>欢迎来到后台首页</h4>
+    </div>
+</body>
+</html>

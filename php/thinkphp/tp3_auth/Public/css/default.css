@@ -1,0 +1,73 @@
+.newbtn1 {
+    margin: 15px 0 25px 0;
+}
+
+.subBtn1 {
+    margin: 50px 0 50px 450px;
+}
+
+.title, .level1, .level2, .level2_title, .level2_con, .levelBlock, .level3, .level3_title, .level3_con {
+    float: left;
+    width: 100%;
+}
+
+.level1 {
+    border: 1px solid #DEDDDD;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-top: none;
+}
+
+.levelBlock {
+    margin-top: 20px;
+    border: 1px solid #DEDDDD;
+    box-sizing: border-box;
+}
+
+.level3 {
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    border-top: none;
+}
+
+.title div, .level1 div, .level2_title div, .level2_con div, .level3_title div, .level3_con div {
+    float: left;
+    width: 25%;
+    background-color: rgb(208, 231, 243);
+    line-height: 30px;
+    text-align: center;
+    color: #353333;
+}
+
+.level1 div {
+    background: none;
+}
+
+.level2 {
+    width: 95%;
+    margin-left: 5%;
+}
+
+.level2_title div {
+    background-color: rgb(235, 243, 248);
+}
+
+.level2_con div {
+    background: none;
+}
+
+.level3 {
+    width: 90%;
+    margin-left: 10%;
+}
+
+.level3_title div {
+    border-bottom: 1px solid #DEDDDD;
+    background: none;
+}
+
+.level3_con div {
+    background: none;
+}

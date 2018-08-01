@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>修改用户</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+</head>
+<body>
+<form class="form-horizontal" action="{:U('AuthInfo/editUser')}" method="post">
+    <input type="hidden" name="id" value="{$userInfo.id}"/>
+
+    <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">用户名：</label>
+
+        <div class="col-sm-10">
+            {$userInfo.username}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">密码：</label>
+
+        <div class="col-sm-10">
+            <input type="password" name="password" value="{$userInfo.password}" class="form-control" id="inputPassword"
+                   placeholder="请输入密码">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword2" class="col-sm-2 control-label">再次输入密码：</label>
+
+        <div class="col-sm-10">
+            <input type="password" name="repassword" value="{$userInfo.password}" class="form-control"
+                   id="inputPassword2" placeholder="请再次输入密码">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword2" class="col-sm-2 control-label">是否启用：</label>
+
+        <div class="col-sm-10">
+            <select name="status" id="">
+                <option value="1"
+                <if condition="$userInfo['status']==1">
+                    selected
+                </if>
+                >启用</option>
+                <option value="0"
+                <if condition="$userInfo['status']==0">
+                    selected
+                </if>
+                >禁用</option>
+            </select>
+        </div>
+    </div>
+
+    <if condition="$userInfo['username']!='admin'">
+        <div class="form-group">
+            <label for="inputPassword2" class="col-sm-2 control-label">所属分组：</label>
+
+            <div class="col-sm-10">
+                <foreach name="Groups" item="group">
+                    <input type="checkbox"
+                           name="groups[]"
+                           value="{$group.id}"
+                    <if condition="$group['groupFocus']==1">
+                        checked="checked"
+                    </if>
+                    />{$group.title}
+                </foreach>
+            </div>
+        </div>
+    </if>
+
+    <div class="form-group">
+        <label for="inputPassword2" class="col-sm-2 control-label">再次输入密码：</label>
+
+        <div class="col-sm-10">
+            <input type="submit" value="修改" class="btn btn-success"/>
+            <a href="{:U('Index/userList')}" class="btn btn-default">取消</a>
+        </div>
+    </div>
+
+    <script src="__PUBLIC__/js/jquery.min.js"></script>
+</form>
+</body>
+</html>

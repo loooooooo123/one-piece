@@ -1,0 +1,22 @@
+[
+  {
+    "name": "热点",
+    "link": "redian"
+  },
+  {
+    "name": "社会",
+    "link": "shehui"
+  },
+  {
+    "name": "财经",
+    "link": "caijing"
+  },
+  {
+    "name": "娱乐",
+    "link": "yule"
+  },
+  {
+    "name": "体育",
+    "link": "tiyu"
+  }
+]

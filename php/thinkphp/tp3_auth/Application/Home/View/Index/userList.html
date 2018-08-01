@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户列表</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/bootstrap.min.css">
+</head>
+<body>
+<a href="{:U('AuthInfo/addUser')}" target="iframe1" class="btn btn-success">添加用户</a>
+<table class="table table-bordered">
+    <tr>
+        <td>序号</td>
+        <td>用户名</td>
+        <td>登陆时间</td>
+        <td>登录ip</td>
+        <td>用户分组</td>
+        <td>操作</td>
+    </tr>
+    <foreach name="userlist" item="val">
+        <tr>
+            <td class="td_id">{$val.id}</td>
+            <td>{$val.username}</td>
+            <td>{$val.logintime}</td>
+            <td>{$val.loginip}</td>
+            <td>
+                <if condition="$val['username']=='admin'">
+                    <p>超级管理员</p>
+                    <else/>
+                    <foreach name="val['groups']" item="group">
+                        <p>{$group.title}</p>
+                    </foreach>
+                </if>
+            </td>
+            <td>
+                <a href="{:U('AuthInfo/editUser',array('id'=>$val['id']))}" class="btn btn-primary""
+                target="iframe1">修改</a>
+                <button type="button" class="btn btn-danger delBtn">删除</button>
+            </td>
+        </tr>
+    </foreach>
+</table>
+
+<script src="__PUBLIC__/js/jquery.min.js"></script>
+<script>
+    $(function () {
+        $(".delBtn").click(function () {
+
+            if (window.confirm('确认删除？')) {
+
+                var getId = parseInt($(this).closest("tr").find(".td_id").text());
+
+                $.ajax({
+                    url: "{:U('AuthInfo/deleteUser')}",
+                    method: 'post',
+                    data: {
+                        id: getId
+                    },
+                    success: function (data) {
+                        if (data.msg == "Y") {
+                            alert('删除成功');
+                        } else {
+                            alert('删除失败');
+                        }
+                        location.href = "{:U('Index/userList')}";
+                    }
+                });
+
+            }
+        });
+    })
+</script>
+
+</body>
+</html>
