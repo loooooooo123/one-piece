@@ -2,6 +2,7 @@
 
 # 忽略idea下所有文件
 idea/
+.idea/
 
 # 忽略指定文件
 _config.yml
