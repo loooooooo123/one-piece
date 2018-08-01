@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>树形导航</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.5.14/vue.min.js"></script>
+</head>
+
+<body>
+
+<div id="div1">
+    <ul v-for="(val,index1) in list">
+        <li>
+            <span>{{val.id}} /</span>
+            <span>{{val.name}} /</span>
+            <span>{{val.cname}} /</span>
+            <span>{{val.url}} /</span>
+            <span>{{val.type}} /</span>
+            <ul v-for="(val2,index2) in val.child">
+                <li>
+                    <span>{{val2.id}} /</span>
+                    <span>{{val2.name}} /</span>
+                    <span>{{val2.cname}} /</span>
+                    <span>{{val2.url}} /</span>
+                    <span>{{val2.type}} /</span>
+                    <ul v-for="(val3,index3) in val2.child">
+                        <li>
+                            <span>{{val3.id}} /</span>
+                            <span>{{val3.name}} /</span>
+                            <span>{{val3.cname}} /</span>
+                            <span>{{val3.url}} /</span>
+                            <span>{{val3.type}} /</span>
+                            <ul v-for="(val4,index4) in val3.child">
+                                <li>
+                                    <span>{{val4.id}} /</span>
+                                    <span>{{val4.name}} /</span>
+                                    <span>{{val4.cname}} /</span>
+                                    <span>{{val4.url}} /</span>
+                                    <span>{{val4.type}} /</span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="con">
+        <p>要修改第<input type="text" v-model="num">个</p>
+
+        <p>
+            <button type="button" @click="setData1(num)">更新</button>
+        </p>
+    </div>
+</div>
+
+<script>
+    var vue1 = new Vue({
+        el: "#div1",
+        methods: {
+            getData1: function () {
+                var that = this;
+                $.getJSON("./data.json", function (data) {
+                    that.list = data;
+                });
+            },
+            //更改指定位置数据
+            setData1: function (n) {
+                this.list.splice(n, 1, this.listNew);
+            }
+        },
+        mounted()
+    {
+        this.getData1();
+    }
+    ,
+    data: {
+        num:0,  //要更改的下标
+                list
+    :
+        [ //列表数据
+            {
+                "child": [
+                    {
+                        "child": [
+                            {
+                                "child": [],
+                                "id": null,
+                                "name": null,
+                                "cname": null,
+                                "url": null,
+                                "type": null
+                            }
+                        ],
+                        "id": null,
+                        "name": null,
+                        "cname": null,
+                        "url": null,
+                        "type": null
+                    }
+                ],
+                "id": null,
+                "name": null,
+                "cname": null,
+                "url": null,
+                "type": null
+            }
+        ],
+                empty1
+    :
+        {
+            "child"
+        :
+            [
+                {
+                    "child": [
+                        {
+                            "child": [],
+                            "id": null,
+                            "name": null,
+                            "cname": null,
+                            "url": null,
+                            "type": null
+                        }
+                    ],
+                    "id": null,
+                    "name": null,
+                    "cname": null,
+                    "url": null,
+                    "type": null
+                }
+            ],
+                    "id"
+        :
+            null,
+                    "name"
+        :
+            null,
+                    "cname"
+        :
+            null,
+                    "url"
+        :
+            null,
+                    "type"
+        :
+            null
+        }
+    ,
+        listNew:{   //新数据
+            "child"
+        :
+            [
+                {
+                    "child": [
+                        {
+                            "child": [],
+                            "id": 11111111,
+                            "name": "fdsfdasfaafaf",
+                            "cname": "aaabbbaaa",
+                            "url": "www.sina.cn",
+                            "type": 3
+                        }
+                    ],
+                    "id": 1,
+                    "name": "afdfadssfafasfas",
+                    "cname": "fdsf",
+                    "url": "eerererr",
+                    "type": 2
+                }
+            ],
+                    "id"
+        :
+            "ooooooooooooo",
+                    "name"
+        :
+            "ooo",
+                    "cname"
+        :
+            "oooooo",
+                    "url"
+        :
+            "oooooooooooooooooooooooooooooooooooooooo",
+                    "type"
+        :
+            1
+        }
+    }
+    })
+    ;
+</script>
+</body>
+
+</html>
