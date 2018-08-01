@@ -1,0 +1,206 @@
+@charset "UTF-8";
+
+/* 用户中心 */
+.userLeft {
+    width: 20%;
+}
+
+.userright {
+    width: 78.5%;
+    margin-left: 1.5%;
+}
+
+.userLeft, .userright {
+    min-height: 300px;
+}
+
+.userCover, .userNav {
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    border-radius: 6px;
+    padding-bottom: 15px;
+}
+
+.userCover .img {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin: 25px 0 0 0;
+}
+
+.userCover .username {
+    width: 100%;
+    line-height: 40px;
+    font-size: 16px;
+    color: #757575;
+}
+
+.userNav {
+    margin-top: 18px;
+    padding-top: 25px;
+}
+
+.userNav_line {
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.userNav_btn {
+    display: block;
+    width: 50%;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 6px;
+    font-size: 19px;
+    color: #5c5b5b;
+}
+
+.userNav_btn.focus, .userNav_btn:hover {
+    background: #ec3b70;
+    color: white;
+}
+
+/* 右侧内容 */
+.userTitle {
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 6px;
+    background: white;
+    font-size: 18px;
+    color: #444444;
+    text-indent: 15px;
+}
+
+/* 用户信息 */
+.myUserInfo {
+    width: 100%;
+    overflow: hidden;
+    background: white;
+    border-radius: 6px;
+    margin-top: 18px;
+    padding: 5% 5% 3% 5%;
+    min-height: 550px;
+    box-sizing: border-box;
+}
+
+.myUserInfo .line {
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 25px;
+    height: 35px;
+}
+
+.myUserInfo .line_left {
+    width: 15%;
+    text-align: right;
+}
+
+.myUserInfo .line_right {
+    width: 83.5%;
+    margin-left: 1.5%;
+}
+
+.myUserInfo .line_left {
+    overflow: hidden;
+}
+
+.edit_userInfo, .save_userInfo, .back_userInfo {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    padding: 0 20px;
+    background: #ec3b70;
+    color: white;
+    border-radius: 4px;
+    margin: 15px 0 0 105px;
+    cursor: pointer;
+}
+
+.edit_userInfo:active {
+    background: #ac2b52;
+}
+
+.save_userInfo {
+    background: #3bbaec;
+    margin-left: 225px;
+}
+
+.save_userInfo:active {
+    background: #2c87ac;
+}
+
+.back_userInfo {
+    background: #f0efef;
+    color: #444444;
+    margin-left: 25px;
+}
+
+.back_userInfo:active {
+    background: #cecece;
+}
+
+/* 编辑用户中心 */
+#userEditInfo {
+    display: none;
+}
+
+#userShowInfo, #userEditInfo {
+    width: 100%;
+    overflow: hidden;
+}
+
+.myUserInfo .line .text_ipt {
+    width: 50%;
+    border: 1px solid #dbdbdb;
+    padding: 3px 15px;
+}
+
+#userEditInfo .line_left {
+    line-height: 30px;
+}
+
+#userEditInfo .line_right {
+    line-height: 30px;
+}
+
+#userEditInfo .line .radio_ipt {
+    margin: 10px 3px 0 0;
+}
+
+#userEditInfo .line .sex_text {
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+#userEditInfo .line_right, #userEditInfo .line_right .rele1 {
+    height: 35px;
+}
+
+.rele1 {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.abs1 {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+}
+
+.dateTime {
+    width: 50%;
+    border-radius: 0;
+    border: 1px solid #dbdbdb;
+    height: 32px;
+    line-height: 32px;
+    box-shadow: none;
+}

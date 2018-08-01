@@ -1,0 +1,53 @@
+title 话题小巷 发布话题
+
+<!-- 公共样式，js引入 -->
+include ../../common/common.pug
+
+<!-- 判断是否已登陆 -->
+script(src="javascripts/logic/common/isloginyes.js")
+link(rel="stylesheet",href="stylesheets/common/content.css")
+link(rel="stylesheet",href="stylesheets/manage/huati/addcontent.css")
+
+style.
+  .addTitle{
+    width:86%;
+  }
+
+
+include ../../common/alertTpl.pug
+include ../../common/headerTpl.pug
+
+
+.center.bodyBg.borderRadius.paddingAuto
+  <!-- 标题，引言，正文 -->
+  .contentTitle.contentTitle_new
+    .h3 标题：
+    .h2.addH2
+      input.addTitle#huati_title(type="text",placeholder="请输入话题的标题",autofocus)
+  .Introduction
+    .h3 引言：
+    textarea.addTitle.addIntroduction#huati_yinyan(type="text",placeholder="请输入话题的简介或引言")
+  .contentText
+    .h3 正文：
+    .contentText_con
+      .toolbar#div1
+      div(style={padding: '5px 0',color: '#ccc'})
+      .text#div2(style={height:'150px'})
+  .Introduction.fengImg
+    .h3 封面图：
+    <input id="fileupload" type="file" name="files[]" data-url="/upload">
+    button#fileupload_btn 选择图片
+  .Introduction
+    .h3 封面预览：
+    img.contentFengImg(src="" alt=" ")
+  .addSubmitCon
+    button.addHuaTiSubmit 发布
+  <!-- 标题，引言，正文 -->
+
+<!-- 图片上传 -->
+script(src="/javascripts/library/jQuery-File-Upload-master/js/vendor/jquery.ui.widget.js")
+script(src="/javascripts/library/jQuery-File-Upload-master/js/jquery.iframe-transport.js")
+script(src="/javascripts/library/jQuery-File-Upload-master/js/jquery.fileupload.js")
+<!-- 富文本编辑器 -->
+script(src="/javascripts/library/wangEditor/wangEditor.min.js")
+script(src="/javascripts/logic/manage/huati/wangeditorConfig.js")

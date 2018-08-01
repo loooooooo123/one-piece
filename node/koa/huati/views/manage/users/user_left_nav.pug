@@ -1,0 +1,23 @@
+.userNav
+    .userNav_line
+        a.userNav_btn(href="/user") 个人信息
+    .userNav_line
+        a.userNav_btn#myhuatiNav1(href="/myhuati") 我的话题
+    .userNav_line
+        a.userNav_btn(href="/mypartakehuati") 参与话题
+    .userNav_line
+        a.userNav_btn(href="/mycommenthuati") 参与吐槽
+    .userNav_line
+        a.userNav_btn(href="/edit_mycover") 修改头像
+    .userNav_line
+        a.userNav_btn(href="/edit_mypsw") 修改密码
+
+input#leftnav_active(type="hidden",value=leftnav_index)
+
+script.
+    $(function(){
+        var getLeftIndex = parseInt($("#leftnav_active").val());
+
+        var dom = $(".userNav_btn");
+        dom.eq(getLeftIndex-1).addClass("focus");
+    });

@@ -1,0 +1,22 @@
+title 参与话题
+
+<!-- 公共样式，js引入 -->
+include ../../common/common.pug
+
+link(rel="stylesheet",href="stylesheets/manage/users/user.css")
+link(rel="stylesheet",href="stylesheets/manage/users/user_my_huati.css")
+
+<!-- 判断是否已登陆 -->
+script(src="javascripts/logic/common/isloginyes.js")
+
+include ../../common/headerTpl.pug
+
+script(src="javascripts/logic/manage/users/user_partake_huati.js")
+
+.content.container
+    .center
+        include ./user_left_nav_userinfo.pug
+        .userRight.left
+            .userTitle 我参与过的话题
+            .myUserInfo#huati_list_view
+

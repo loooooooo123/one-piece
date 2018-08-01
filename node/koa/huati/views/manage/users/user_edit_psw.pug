@@ -1,0 +1,41 @@
+title 修改密码
+
+<!-- 公共样式，js引入 -->
+include ../../common/common.pug
+
+link(rel="stylesheet",href="stylesheets/manage/users/user.css")
+link(rel="stylesheet",href="stylesheets/manage/users/user_edit_psw.css")
+
+<!-- 判断是否已登陆 -->
+script(src="javascripts/logic/common/isloginyes.js")
+
+include ../../common/headerTpl.pug
+
+include ../../common/alertTpl.pug
+
+.content.container
+    .center
+        include ./user_left_nav_userinfo.pug
+
+        .userRight.left
+            .userTitle 修改密码
+            .myUserInfo
+                form#userfrom1.form-horizontal
+                    .form-group
+                        .col-sm-2.control-label(for="oldpassword") 原密码
+                        .col-sm-5
+                            input.form-control#oldpassword(type="password",name="oldpassword",placeholder="请输入原密码，最多不超过10位")
+                    .form-group
+                        .col-sm-2.control-label(for="newpassword") 新密码
+                        .col-sm-5
+                            input.form-control#newpassword(type="password",name="newpassword",placeholder="请输入新密码，最多不超过10位")
+                    .form-group
+                        .col-sm-2.control-label(for="newpassword_repeat") 确认密码
+                        .col-sm-5
+                            input.form-control#newpassword_repeat(type="password",name="newpassword_repeat",placeholder="请再次输入新密码，最多不超过10位")
+                    .form-group.martop1
+                        .col-sm-2.control-label
+                        .col-sm-5
+                            button.btn.btn-primary#psw_submit(type="button") 确认修改
+                    
+script(src="javascripts/logic/manage/users/user_edit_psw.js")

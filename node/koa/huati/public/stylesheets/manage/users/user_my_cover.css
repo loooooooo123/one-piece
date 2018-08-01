@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+.cover_con {
+    width: 98%;
+    padding-left: 6%;
+    overflow: hidden;
+}
+
+.cover_con_block {
+    width: 120px;
+    height: 170px;
+}
+
+.cover_text {
+    width: 100%;
+    text-align: center;
+    line-height: 45px;
+    color: #7e7e7e;
+}
+
+.cover_img {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+}
+
+.cover_con_block2, .cover_con_block3 {
+    width: 80px;
+    margin-left: 50px;
+}
+
+.cover_con_block2 .cover_img {
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    margin: 20px 0 20px 0;
+}
+
+.cover_con_block3 {
+    width: 60px;
+}
+
+.cover_con_block3 .cover_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    margin: 30px 0 30px 0;
+}
+
+.cover_btn {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 35px;
+}
+
+/* 上传封面图 */
+#fileupload {
+    display: none;
+}
+
+#fileupload_btn, .uploadsubBtn {
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    background: #32bcd4;
+    margin-left: 55px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+#fileupload_btn:active {
+    background: #2690a3;
+}
+
+.uploadsubBtn {
+    background: #2dc4a3;
+}
+
+.uploadsubBtn:active {
+    background: #1c7a66;
+}
+

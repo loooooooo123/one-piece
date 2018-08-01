@@ -1,0 +1,35 @@
+title 话题小巷 搜索结果
+
+<!-- 公共样式，js引入 -->
+include ../common/common.pug
+
+link(rel="stylesheet",href="stylesheets/public_view/index.css")
+style.
+    .search_count{
+        width:100%;
+        height:auto;
+        overflow:hidden;
+        line-height:50px;
+        background:white;
+        border-radius:6px;
+        margin-bottom:20px;
+        text-indent:15px;
+        font-size:18px;
+    }
+    #searchCount{
+        color:#2495e0;
+        margin:0 5px;
+    }
+
+script(src="/javascripts/logic/public_view/search_list.js")
+
+include ../common/headerTpl.pug
+
+.content
+    input#kekword_ipt(type="hidden",value=keyword)
+    .center#huati_list_view
+        .search_count
+            span 共找到
+            span#searchCount
+            span 个话题
+        

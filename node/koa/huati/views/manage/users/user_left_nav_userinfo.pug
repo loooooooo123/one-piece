@@ -1,0 +1,19 @@
+script.
+    $(function(){
+        //获取用户头像
+        getUserCover(function(data){
+            if(data!="null"){
+                $(".userCover .img").eq(0).attr("src",data);
+            }else{
+                $(".userCover .img").eq(0).attr("src","images/nocover.png");
+            }
+        });
+    })
+
+.userLeft.left
+    .userCover
+        img.img(src="",alt="读取中…")
+        .username
+    include ./user_left_nav.pug
+
+script(src="javascripts/logic/common/userinfo.js")

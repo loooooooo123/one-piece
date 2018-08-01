@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+/* 美化alert提示框 */
+
+.alertCon {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.55);
+    display: none;
+    z-index: 9990;
+    top: 0;
+    left: 0;
+}
+
+.alertCenter {
+    position: fixed;
+    z-index: 9999;
+    min-width: 200px;
+    padding: 60px;
+    border-radius: 6px;
+    background: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.alertCenter .text {
+    width: 100%;
+    text-align: center;
+    font-size: 23px;
+    color: rgb(78, 78, 78);
+}

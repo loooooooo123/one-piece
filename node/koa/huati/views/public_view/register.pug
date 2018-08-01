@@ -1,0 +1,37 @@
+title 用户注册
+
+<!-- 公共样式，js引入 -->
+include ../common/common.pug
+
+<!-- 判断是否已登陆 -->
+script(src="javascripts/logic/common/nologinyes.js")
+link(rel="stylesheet",href="stylesheets/public_view/loginRegister.css")
+
+include ../common/headerTpl.pug
+
+section.content_new.bg1
+    <!-- 用户注册 -->
+    .login
+      .line1
+        .lineText.left 用户名
+        .lineContent.left(id="username")
+          input.ipt1(id="uname",type="text", placeholder="请输入用户名，长度不超过10位",autofocus)
+      .line1
+        .lineText.lineTextLetter.left 密&nbsp;&nbsp;&nbsp;码
+        .lineContent.left(id="password")
+          input.ipt1(id="upsw",type="password", placeholder="请输入密码，长度不超过10位")
+      .line1
+        .lineText.lineTextLetter.left 确认密码
+        .lineContent.left(id="password2")
+          input.ipt1(id="upsw2",type="password", placeholder="请再次输入密码，长度不超过10位")
+      .line1
+        .lineText.lineTextLetter.left 验证码
+        .lineContent.left(id="code")
+          input.ipt1.codeIpt1.left(id="ucode",type="text", placeholder="请输入验证码")
+          img.yzm.left.yzmReset(src="/api/code",alt="", title="看不清可单击图片刷新")
+          .yzmBtn.left.yzmReset 换一换
+      .line1.line1_h
+        .loginBtn1 注册
+      .formtip(text="formTextError",id="formParentId")
+
+script(src="javascripts/logic/public_view/register.js")

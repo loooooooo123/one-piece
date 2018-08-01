@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+.contentTitle {
+    overflow: hidden;
+    width: 100%;
+}
+
+.addH2 {
+    height: auto;
+    margin-top: 0;
+}
+
+.addTitle {
+    width: 96%;
+    height: 40px;
+    line-height: 40px;
+    text-indent: 0.6em;
+    font-size: 18px;
+    border: 1px solid #dbdada;
+    box-sizing: border-box;
+    outline: none;
+    float: left;
+    border-radius: 6px;
+}
+
+.addTitle:hover {
+    border: 1px solid #3ed3f8;
+}
+
+.addIntroduction {
+    text-indent: 0;
+    width: 86.2%;
+    resize: none;
+    height: 80px;
+    outline: none;
+    line-height: 26px;
+    padding: 10px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.addContent {
+    height: 160px;
+}
+
+.h3 {
+    width: 10%;
+    float: left;
+    margin: 0;
+    font-size: 18px;
+    line-height: 38px;
+    text-align: right;
+}
+
+.contentTitle, .Introduction, .contentText {
+    margin: 20px 0 0 0;
+    float: left;
+}
+
+.contentText .toolbar, .contentText .w-e-text-container, .contentText .toolbar div, .contentText .w-e-text-container div {
+    z-index: 999 !important;
+}
+
+.contentText_con {
+    float: left;
+    width: 86%;
+    overflow: hidden;
+    border: 1px solid #cecece;
+    border-radius: 6px;
+}
+
+.addSubmitCon {
+    width: 100%;
+    overflow: hidden;
+}
+
+.addHuaTiSubmit {
+    width: 150px;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    background: #1cb4cf;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 50px 0 0 40%;
+}
+
+.addHuaTiSubmit:active {
+    background: #148296;
+}
+
+/* 重置编辑器 */
+.toolbar {
+    background: #f5f7f7;
+    border-bottom: 1px solid #eceaea;
+}
+
+/* 上传封面图 */
+#fileupload {
+    display: none;
+}
+
+#fileupload_btn, .uploadsubBtn {
+    width: auto;
+    padding: 0 10px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #1cb4cf;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 8px 15px 0 0;
+}
+
+#fileupload_btn {
+    background: #dddddd;
+    color: gray;
+}
+
+.contentFengImg {
+    width: 20%;
+}

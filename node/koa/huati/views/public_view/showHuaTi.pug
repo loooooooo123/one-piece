@@ -1,0 +1,42 @@
+title 话题
+
+<!-- 公共样式，js引入 -->
+include ../common/common.pug
+
+link(rel="stylesheet",href="stylesheets/common/content.css")
+
+include ../common/headerTpl.pug
+
+script(src="/javascripts/logic/public_view/showhuati.js")
+script(src="/javascripts/logic/public_view/showhuati_comment.js")
+
+include ../common/alertTpl.pug
+
+include ../common/comment.pug
+
+.center
+
+  input#hid(type="hidden",value=id)
+
+  <!-- 标题，引言，正文 -->
+  .content_new#huati_content_show
+  <!-- 标题，引言，正文 -->
+
+  <!-- 支持率 -->
+  .rateOfSupport#huati_vote_show
+  <!-- 支持率 -->
+
+  <!-- 正反放辩论 -->
+  .userContent
+
+    <!-- 支持者吐槽列表 -->
+    .zf_left.left#comment_list_left
+
+    <!-- 反对者吐槽列表 -->
+    .fa_right.right#comment_list_right
+
+    <!-- 打赏 -->
+    include ../common/reward.pug
+    <!-- 打赏 -->
+
+    <!-- 正反放辩论 -->

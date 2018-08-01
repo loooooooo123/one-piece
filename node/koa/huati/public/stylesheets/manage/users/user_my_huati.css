@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+.myUserInfo {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+}
+
+.huatiBlock {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    width: 100%;
+    overflow: hidden;
+}
+
+.huati_line {
+    width: 100%;
+    overflow: hidden;
+    height: 130px;
+    background: white;
+    border-radius: 6px;
+    margin-bottom: 18px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+.huati_line .img {
+    width: 100px;
+    height: 100px;
+    margin: 5px 0 0 0;
+}
+
+.huati_line_con {
+    width: 770px;
+    margin-left: 20px;
+}
+
+.huati_line_con .title {
+    line-height: 30px;
+    font-size: 18px;
+    overflow: hidden;
+    height: 30px;
+    margin-bottom: 3px;
+}
+
+.huati_line_con .desc {
+    color: #6d6c6c;
+    font-size: 14px;
+    height: 36px;
+    line-height: 18px;
+    overflow: hidden;
+}
+
+.huati_line_con .move {
+    color: #19bb98;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.huati_line .noList {
+    line-height: 115px;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    font-size: 20px;
+    color: #bebebe;
+}

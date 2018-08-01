@@ -1,0 +1,29 @@
+link(rel="stylesheet",href="stylesheets/common/header.css")
+
+header.header1
+  <!-- 头部组件 -->
+  .center
+    span.logoSpan.left
+      a.left(href="/")
+        .logo.left
+      nav.navbar.left
+        a(href="/") 广场
+        a(href="/") 话题
+        a(href="/") 许愿星空
+        a(href="/") 缘分瓶
+    .search.right
+      input.searchIpt#searchIpt.left(type="text",placeholder="请输入话题或昵称")
+      button.searchSubmit#searchSubmit.left(type="button") 搜索
+      span#noLogin
+        a.loginA(href="/login") 登陆
+        a.loginA(href="/register") 注册
+        a.loginA(href="/user") 
+      span#usernav
+        a(href="/user")
+          span.left#usersp1
+            .text1.left
+            tt.left 的家
+        a.loginA(href="/addhuati") 发话题
+        a.loginA(href="javascript:void(0)")#logoutA 退出登录
+
+script(src="javascripts/logic/common/header.js")

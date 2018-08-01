@@ -1,0 +1,15 @@
+<!-- 话题评论 -->
+link(rel="stylesheet",href="stylesheets/common/comment.css")
+
+.comment_bar 我要吐槽
+.comment
+  .close#comment_close ×
+  textarea#comment(name="comment",placeholder="从这里开始吐槽",autofocus)
+  .select_vote
+    label.left.focus(for="zipt",value="Y",flag="Y")
+      span ✔支持
+    label.left(for="fipt",value="N",flag="N")
+      span ✘反对
+  .comment_submit 吐一下槽
+
+script(src="javascripts/logic/common/comment.js")

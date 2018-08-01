@@ -1,0 +1,53 @@
+title 修改头像
+
+<!-- 公共样式，js引入 -->
+include ../../common/common.pug
+
+link(rel="stylesheet",href="stylesheets/manage/users/user.css")
+link(rel="stylesheet",href="stylesheets/manage/users/user_my_cover.css")
+
+<!-- 判断是否已登陆 -->
+script(src="javascripts/logic/common/isloginyes.js")
+
+include ../../common/headerTpl.pug
+
+script(src="javascripts/logic/manage/users/user_my_cover.js")
+script.
+    $(function(){
+        //获取用户头像
+        getUserCover(function(data){
+            if(data!="null"){
+                $(".cover_con_block .cover_img").attr("src",data);
+            }else{
+                $(".cover_con_block .cover_img").attr("src","images/nocover.png");
+            }
+        });
+    })
+
+include ../../common/alertTpl.pug
+
+.content.container
+    .center
+        include ./user_left_nav_userinfo.pug
+
+        .userRight.left
+            .userTitle 修改头像
+            .myUserInfo
+                .cover_con
+                    .cover_con_block.left
+                        img.cover_img(src="",alt="读取中…")
+                        .cover_text 120px*120px
+                    .cover_con_block.cover_con_block2.left
+                        img.cover_img(src="",alt="读取中…")
+                        .cover_text 80px*80px
+                    .cover_con_block.cover_con_block3.left
+                        img.cover_img(src="",alt="读取中…")
+                        .cover_text 60px*60px
+                .cover_btn
+                    <input id="fileupload" type="file" name="files[]" data-url="/upload">
+                    .cover_selectImg.borderRadius.left#fileupload_btn 选择图片
+                    
+<!-- 图片上传 -->
+script(src="/javascripts/library/jQuery-File-Upload-master/js/vendor/jquery.ui.widget.js")
+script(src="/javascripts/library/jQuery-File-Upload-master/js/jquery.iframe-transport.js")
+script(src="/javascripts/library/jQuery-File-Upload-master/js/jquery.fileupload.js")

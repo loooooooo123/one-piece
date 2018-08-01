@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.login {
+    min-width: 400px;
+}
+
+.lineText {
+    width: 20%;
+}
+
+.lineContent {
+    width: 77%;
+}

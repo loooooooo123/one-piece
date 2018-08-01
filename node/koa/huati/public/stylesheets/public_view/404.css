@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+    background: url('../../images/no404.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+.no404, .no500 {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.header1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.no500 {
+    font-size: 30px;
+}

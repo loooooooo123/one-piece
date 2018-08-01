@@ -1,0 +1,78 @@
+/* 全局头部 */
+
+.header1 {
+    width: 100%;
+    height: 50px;
+    background: #fcdc10;
+    margin-bottom: 25px;
+}
+
+.logo {
+    width: 150px;
+    height: 50px;
+    background: url('../../images/logo.png') 0 0 no-repeat;
+    background-size: cover;
+}
+
+.navbar a, .search a {
+    font-size: 18px;
+    color: #a06c0b;
+    line-height: 50px;
+    margin-right: 35px;
+}
+
+.search a {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.search a.loginA {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.navbar a:hover, .search a:hover {
+    text-decoration: none;
+}
+
+.searchIpt {
+    width: 260px;
+    background: white;
+    border: 2px solid #ef9c00;
+    border-radius: 6px;
+    height: 26px;
+    line-height: 26px;
+    text-indent: 1em;
+    margin: 13px 5px 0 0;
+}
+
+.searchSubmit {
+    padding: 0 8px;
+    height: 26px;
+    line-height: 26px;
+    margin: 13px 5px 0 0;
+    border: none;
+    background: #f8a812;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+}
+
+#usernav {
+    display: none;
+}
+
+#usersp1 {
+    margin-left: 20px;
+    color: #a06c0b;
+    min-width: 60px;
+    display: block;
+    margin-top: 13px;
+    font-size: 16px;
+    max-width: 220px;
+    overflow: hidden;
+    line-height: 26px;
+    height: 26px;
+}

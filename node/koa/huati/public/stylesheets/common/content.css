@@ -1,0 +1,230 @@
+@charset "UTF-8";
+
+.content_new {
+    margin-top: 20px;
+    width: 100%;
+    padding: 20px 3.5%;
+    height: auto;
+    background: white;
+    border-radius: 4px;
+    color: #545453;
+    box-sizing: border-box;
+}
+
+.content_new .h2 {
+    font-size: 30px;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+}
+
+.Introduction {
+    width: 100%;
+    margin-top: 25px;
+    font-size: 16px;
+    color: #5c5c5c;
+}
+
+.Introduction .rele1 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.Introduction_con {
+    width: 100%;
+    text-indent: 1.3em;
+    text-justify: inter-ideograph;
+    text-align: justify;
+    word-break: break-all;
+    line-height: 24px;
+}
+
+.Introduction_sup, .Introduction_sub {
+    position: absolute;
+    font-size: 48px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #b4b4b3;
+    height: 30px;
+    width: 25px;
+    z-index: 999;
+}
+
+.Introduction_sup {
+    top: -15px;
+    left: 0;
+}
+
+.Introduction_sub {
+    right: -6px;
+    bottom: 5px;
+}
+
+.contentText {
+    width: 100%;
+}
+
+.h3 {
+    font-size: 25px;
+    margin: 20px 0;
+    color: #b4b4b3;
+}
+
+.contentText_con {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.rateOfSupport {
+    width: 100%;
+    background: white;
+    padding: 25px 3%;
+    overflow: hidden;
+    background: url("../../images/audioRrequency.png") center center no-repeat;
+}
+
+.rateOfSupport_circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background: #91c7ed;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin: 15px 0 0 0;
+    cursor: pointer;
+}
+
+.rateOfSupport_circle .line1 {
+    text-align: center;
+    width: 100%;
+    margin-top: 13px;
+    font-size: 16px;
+}
+
+.rateOfSupport_circle .line2 {
+    font-size: 12px;
+    margin-top: 0;
+}
+
+.rateOfSupport_circle.c1 {
+    margin-left: 100px;
+}
+
+.rateOfSupport_circle.c2 {
+    margin-right: 100px;
+    background: #e06282;
+}
+
+.rateOfSupport_vs {
+    margin: 0 auto;
+    width: 75px;
+    font-size: 60px;
+    color: rgba(31, 179, 97, 0.781);
+}
+
+.userContent {
+    width: 100%;
+    background: url("../../images/bg1.png") center 0 repeat-y;
+    overflow: hidden;
+}
+
+.zf_left, .fa_right {
+    width: 50%;
+    height: auto;
+    min-height: 200px;
+}
+
+.userContent_left {
+    width: 70%;
+}
+
+.zf_left .userContent_left {
+    margin: 25px 0 0 13%;
+}
+
+.fa_right .userContent_left {
+    margin: 25px 13% 0 0;
+    float: right;
+}
+
+.userContent_block {
+    width: 100%;
+    height: auto;
+    background: white;
+    box-sizing: border-box;
+    padding: 15px 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.userImg {
+    width: 46px;
+    height: 46px;
+    border-radius: 23px;
+}
+
+.userContent_block_top, .userContent_block_bottom {
+    width: 100%;
+    overflow: hidden;
+}
+
+.userName {
+    font-size: 15px;
+    line-height: 42px;
+    margin-left: 8px;
+    color: gray;
+}
+
+.userLive {
+    color: #989898;
+    margin: 10px 0 0 0;
+}
+
+.userContent_block_bottom {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 5px;
+    box-sizing: border-box;
+    text-justify: inter-ideograph;
+    text-align: justify;
+    word-break: break-all;
+    color: #3d3d3d;
+    line-height: 26px;
+}
+
+.marbottom1 {
+    margin-bottom: 35px;
+}
+
+.contentTitle {
+    padding: 1% 3% 2% 3%;
+    box-sizing: border-box;
+}
+
+.contentTitle_new {
+    padding: 0;
+}
+
+.relePar {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.comment_count {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    color: #a1a0a0;
+}
+
+.comment_count .uname {
+    margin-left: 25px;
+}
+
+.comment_count .text {
+    color: #7999ac;
+}
