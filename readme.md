@@ -18,10 +18,10 @@
 # 其他
 ## ## iview ui/element ui
 
-## ![技术栈](./images/codeimg1.png)
+## ![技术栈](./other/images/codeimg1.png)
 
-## 微信：![技术栈](./images/userimg.png)伟岸的我
+## 微信：![技术栈](./other/images/userimg.png)伟岸的我
 
-![技术栈](./images/codemap.jpg)
+![技术栈](./other/images/codemap.jpg)
 
 
