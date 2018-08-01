@@ -1,0 +1,291 @@
+[
+  {
+    "child": [
+      {
+        "child": [
+          {
+            "child": [
+            ],
+            "code": "电冰箱（零星）",
+            "icon": "",
+            "name": "电冰箱（零星）",
+            "url": "http://www.baidu.com",
+            "parentCode": "办公电器（零星）"
+          },
+          {
+            "child": [
+            ],
+            "code": "柜式空调",
+            "icon": "",
+            "name": "柜式空调",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "办公电器（零星）"
+          },
+          {
+            "child": [
+            ],
+            "code": "分体式壁挂空调",
+            "icon": "",
+            "name": "分体式壁挂空调",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "办公电器（零星）"
+          },
+          {
+            "child": [
+            ],
+            "code": "电磁炉（零星）",
+            "icon": "",
+            "name": "电磁炉（零星）",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "办公电器（零星）"
+          }
+        ],
+        "code": "办公电器（零星）",
+        "icon": "icon-minus-sign",
+        "name": "办公电器（零星）aaa",
+        "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+        "parentCode": "办公用品（零星）"
+      },
+      {
+        "child": [
+          {
+            "child": [
+            ],
+            "code": "电冰箱（零星）",
+            "icon": "",
+            "name": "电冰箱（零星）",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "办公电器（零星）"
+          },
+          {
+            "child": [
+            ],
+            "code": "柜式空调",
+            "icon": "",
+            "name": "柜式空调",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "办公电器（零星）"
+          },
+          {
+            "child": [
+            ],
+            "code": "分体式壁挂空调",
+            "icon": "",
+            "name": "分体式壁挂空调",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "办公电器（零星）"
+          },
+          {
+            "child": [
+            ],
+            "code": "电磁炉（零星）",
+            "icon": "",
+            "name": "电磁炉（零星）",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "办公电器（零星）"
+          }
+        ],
+        "code": "办公电器（零星）",
+        "icon": "icon-minus-sign",
+        "name": "办公电器（零星）bbb",
+        "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+        "parentCode": "办公用品（零星）"
+      }
+    ],
+    "code": "办公用品（零星）",
+    "icon": "icon-th",
+    "name": "办公用品（零星）",
+    "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com"
+  },
+  {
+    "child": [
+      {
+        "child": [
+          {
+            "child": [
+            ],
+            "code": "扁钢",
+            "icon": "",
+            "name": "扁钢",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "成型件"
+          },
+          {
+            "child": [
+            ],
+            "code": "槽钢",
+            "icon": "",
+            "name": "槽钢",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "成型件"
+          },
+          {
+            "child": [
+            ],
+            "code": "角钢",
+            "icon": "",
+            "name": "角钢",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "成型件"
+          }
+        ],
+        "code": "成型件",
+        "icon": "icon-minus-sign",
+        "name": "成型件",
+        "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+        "parentCode": "铁附件"
+      }
+    ],
+    "code": "铁附件",
+    "icon": "icon-th",
+    "name": "铁附件",
+    "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com"
+  },
+  {
+    "child": [
+      {
+        "child": [
+          {
+            "child": [
+            ],
+            "code": "票据夹",
+            "icon": "",
+            "name": "票据夹",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "财务用品"
+          }
+        ],
+        "code": "财务用品",
+        "icon": "icon-minus-sign",
+        "name": "财务用品",
+        "parentCode": "办公用品"
+      }
+    ],
+    "code": "办公用品",
+    "icon": "icon-th",
+    "name": "办公用品",
+    "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com"
+  },
+  {
+    "child": [
+      {
+        "child": [
+          {
+            "child": [
+            ],
+            "code": "HCS办公用品",
+            "icon": "",
+            "name": "HCS办公用品",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "HCS办公用品类"
+          }
+        ],
+        "code": "HCS办公用品类",
+        "icon": "icon-minus-sign",
+        "name": "HCS办公用品类",
+        "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+        "parentCode": "HCS测试品类"
+      }
+    ],
+    "code": "HCS测试品类",
+    "icon": "icon-th",
+    "name": "HCS测试品类",
+    "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com"
+  },
+  {
+    "child": [
+      {
+        "child": [
+          {
+            "child": [
+            ],
+            "code": "LH测试202",
+            "icon": "",
+            "name": "LH测试202",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "LH分类测试2"
+          }
+        ],
+        "code": "LH分类测试2",
+        "icon": "icon-minus-sign",
+        "name": "LH分类测试2",
+        "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+        "parentCode": "LH测试品类"
+      }
+    ],
+    "code": "LH测试品类",
+    "icon": "icon-th",
+    "name": "LH测试品类",
+    "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com"
+  },
+  {
+    "child": [
+      {
+        "child": [
+          {
+            "child": [
+            ],
+            "code": "电筒",
+            "icon": "",
+            "name": "电筒",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "照明设备"
+          }
+        ],
+        "code": "照明设备",
+        "icon": "icon-minus-sign",
+        "name": "照明设备",
+        "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+        "parentCode": "低压电器"
+      },
+      {
+        "child": [
+          {
+            "child": [
+            ],
+            "code": "电筒222",
+            "icon": "",
+            "name": "电筒222",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "照明设备222"
+          }
+        ],
+        "code": "照明设备222",
+        "icon": "icon-minus-sign",
+        "name": "照明设备222",
+        "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+        "parentCode": "低压电器222"
+      }
+    ],
+    "code": "低压电器",
+    "icon": "icon-th",
+    "name": "低压电器",
+    "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com"
+  },
+  {
+    "child": [
+      {
+        "child": [
+          {
+            "child": [
+            ],
+            "code": "丙酮",
+            "icon": "",
+            "name": "丙酮",
+            "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+            "parentCode": "化工"
+          }
+        ],
+        "code": "化工",
+        "icon": "icon-minus-sign",
+        "name": "化工",
+        "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com",
+        "parentCode": "燃料化工"
+      }
+    ],
+    "code": "燃料化工",
+    "icon": "icon-th",
+    "name": "燃料化工",
+    "url": "http://www.baidu.comhttp://www.baidu.comhttp://www.baidu.com"
+  }
+]
