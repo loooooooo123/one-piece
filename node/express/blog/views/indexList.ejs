@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<%- include info %>
+
+<div class='center'>
+
+    <%- include nav %>
+
+    <article>
+
+        <div class="arcContent left">
+            <% posts.forEach(function(con, index){ %>
+            <div class="arcBlock left">
+                <h2><a href="/arcBody/<%= con._id %>"><%= con.title %></a></h2>
+
+                <div class='arcInfo'>
+
+                    <% if(user == con.name){ %>
+                    <div class="arcInfo_edit2 right">
+                        <span><a href='/editFind/<%= con._id %>'>编辑</a></span>
+                        <span><tt re1='<%= con._id %>' class='removeArcTT'>删除</tt></span>
+                    </div>
+                    <% } %>
+
+                    <div class="arcInfo_edit left">
+                        <span>
+                            <tt>作者：</tt>
+                            <a href='/arc/<%= con.name %>' class='userTT1'><%= con.name %></a>
+                        </span>
+                        <span>|</span>
+                        <span><tt>日期：</tt><%= con.time.minute %></span>
+                        <span><tt>回复：</tt><%= con.reply ? con.reply.length : 0 %></span>
+                        <span><tt>阅读：</tt><%= con.pv ? con.pv : 0 %></span>
+                    </div>
+                </div>
+                <div class='arcBodyCon'><%- con.text %></div>
+            </div>
+            <% }) %>
+        </div>
+
+        <%- include page %>
+
+    </article>
+
+</div>
+
+<%- include footer %>
+
+<script>
+
+    //首页限制图片大小
+    indexImgMax();
+
+    $(function () {
+        //删除文章
+        removeArc();
+
+        // 用户登出
+        logout();
+    })
+
+</script>
+
+</body>
+</html>
+

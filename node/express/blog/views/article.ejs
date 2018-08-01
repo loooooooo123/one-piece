@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<%- include info %>
+
+<div class='center'>
+
+    <%- include nav %>
+
+    <article>
+
+        <!--编辑器-->
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <script charset="utf-8" src="/KindEditor/kindeditor-min.js"></script>
+        <script charset="utf-8" src="/KindEditor/lang/zh_CN.js"></script>
+        <script>
+            var editor;
+            KindEditor.ready(function (K) {
+                editor = K.create('#arcBody', {
+                    pasteType: 0,
+                    width: '100%',
+                    height: '500px',
+                    allowFileManager: true,
+                    uploadJson: '/uploadImg'	//配置图片上传路径
+                });
+            });
+        </script>
+        <div class='arcCon left'>
+            <div class='ArcDiv1'><input type='text' value='' id='arcTitle' placeholder="请输入文章的标题"/></div>
+            <div class='ArcDiv1'><textarea id='arcBody' name="arcBody"></textarea></div>
+            <div class='ArcDiv1'>
+                <div class='submit' id='submit'>发布</div>
+            </div>
+        </div>
+
+    </article>
+
+</div>
+
+<%- include footer %>
+
+<script>
+    $(function () {
+        //发布文章
+        arcAjax();
+
+        // 用户登出
+        logout();
+    })
+</script>
+
+</body>
+</html>
+

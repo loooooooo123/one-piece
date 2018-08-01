@@ -1,0 +1,29 @@
+<div class='page left'>
+    <div class="pageCenter">
+        <a
+                <% if(page <= 1){ %>
+                class='NoFocus'
+                <% }else{ %>
+                href="/pageList/<%= firstPage %>"
+                <% } %>
+                >上一页</a>
+
+        <% for(var a = 0;a < allPage;a++){ %>
+        <a href="/pageList/<%= a + 1 %>"
+                <% if(page == a + 1){ %>
+           class='pageFocus'
+                <% } %>
+                ><%= a + 1 %></a>
+        <% } %>
+
+        <a
+                <% if(page >= allPage){ %>
+                class='NoFocus'
+                <% }else{ %>
+                href="/pageList/<%= lastPage %>"
+                <% } %>
+                >下一页</a>
+
+        <span>共：<%= allPage %>页</span>
+    </div>
+</div>

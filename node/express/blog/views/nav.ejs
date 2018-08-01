@@ -1,0 +1,13 @@
+<nav>
+    <ul class='left'>
+        <li class='borderRadiusTop'><a title="主页" href="/">博客主页</a></li>
+        <% if(user){ %>
+        <li><a title="发表" href="/post">发表博文</a></li>
+        <li class='borderRadiusBottom'><span title="退出登录" id='logout'>退出登录</span></li>
+        <% }else{ %>
+        <li><a title="登录" href="/login">用户登录</a></li>
+        <li class='borderRadiusBottom'><a title="注册" href="/reg">用户注册</a></li>
+        <% } %>
+    </ul>
+</nav>
+

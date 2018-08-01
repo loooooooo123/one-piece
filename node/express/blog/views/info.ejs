@@ -1,0 +1,20 @@
+<div class="info">
+    <div class="infoCenter">
+        <%= title %>
+
+        <div class="search right">
+            <form action="/search" method='POST'>
+                <input type="text" class='searchIpt left' name='keyWord' placeholder='请输入关键词'/>
+                <button type='submit' class='searchBtn left'>查询</button>
+            </form>
+        </div>
+
+        <% if (user) { %>
+        <div class='login_user right'><a href="/arc/my">我的文章</a></div>
+        <div class='login_user right'>
+            <img src=" <%= userInfo.userImgUrl %>  " alt="" class='infoUserImg'>
+            <%= user %>
+        </div>
+        <% } %>
+    </div>
+</div>

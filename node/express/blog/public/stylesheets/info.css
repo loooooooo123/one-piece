@@ -1,0 +1,29 @@
+/* 头部信息 */
+.info {
+    width: 100%;
+    height: 35px;
+    overflow: hidden;
+    line-height: 35px;
+    background: #0f8db2;
+    color: white;
+}
+
+.info a, .info .login_user {
+    color: white;
+}
+
+.infoCenter {
+    width: 1000px;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.infoUserImg {
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    float: left;
+    margin-top: 3px;
+    margin-right: 3px;
+}

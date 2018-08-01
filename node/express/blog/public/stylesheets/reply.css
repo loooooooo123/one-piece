@@ -1,0 +1,94 @@
+/* 回复 */
+.Reply, .Reply_con, .Reply_title, .Reply_body, .Reply_sub, .ReplyCon_line {
+    width: 100%;
+    height: auto;
+    color: gray;
+}
+
+.replyCol {
+    color: rgba(50%, 30%, 30%, 0.5);
+    margin-right: 15px;
+}
+
+.Reply_text {
+    width: 100%;
+    height: 130px;
+    border: 1px solid #cecece;
+    resize: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: gray;
+    border-radius: 5px;
+}
+
+.arcContent .Reply_title, .arcContent .Reply_body {
+    background: white;
+    margin: 0 15px;
+    box-sizing: border-box;
+    width: 773px;
+    border-radius: 3px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.ReplySubmit {
+    width: 80px;
+    height: 40px;
+    border: none;
+    background: #39afe5;
+    font-size: 18px;
+    font-family: '黑体';
+    color: white;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    border-radius: 5px;
+    margin: 0 15px 20px 0;
+}
+
+.arcContent .Reply_con {
+    margin-top: 0;
+}
+
+.arcContent .ReplyCon_line {
+    margin: 0 15px 15px 15px;
+    width: 773px;
+    box-sizing: border-box;
+    background: white;
+    border-radius: 8px;
+    padding: 0 10px;
+}
+
+.arcContent .ReplyCon_info {
+    width: 25%;
+    margin-top: 0;
+    border-right: 1px dotted #cecece;
+    box-sizing: border-box;
+}
+
+.arcContent .ReplyConInfo_line, .arcContent .ReplyConInfo_line2 {
+    width: 100%;
+    height: 25px;
+    margin-top: 0;
+}
+
+.arcContent .ReplyConInfo_line {
+    margin-top: 14px;
+}
+
+.ReplyConInfo_line2 {
+    font-size: 12px;
+    color: #cecece;
+}
+
+.arcContent .ReplyCon_text {
+    width: 75%;
+    padding: 10px;
+    box-sizing: border-box;
+    line-height: 25px;
+    margin-top: 0;
+    text-indent: 1em;
+}
+

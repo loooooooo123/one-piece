@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<%- include info %>
+
+<div class='center'>
+
+    <%- include nav %>
+
+    <article class='arcBgWhite'>
+
+        <div class='login'>
+            <div class="regUserCon1 loginUserCon1 left">
+                <div class='line'><span>用户名：</span><input type='text' value='' id='username'/></div>
+                <div class='line'><span>密码：</span><input type='password' value='' id='password'/></div>
+                <div class='line'>
+                    <div class='submit'>登录</div>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+</div>
+
+<%- include footer %>
+
+<script>
+    $(function () {
+        //用户登录
+        loginAjax();
+    })
+</script>
+
+</body>
+</html>
+

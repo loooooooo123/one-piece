@@ -1,0 +1,49 @@
+nav {
+    float: left;
+    width: 170px;
+    box-sizing: border-box;
+    background: #a9d9e7;
+    min-height: 199px;
+    border-radius: 5px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+nav li {
+    line-height: 66px;
+    text-align: center;
+    width: 100%;
+    background: #0f8db2;
+    float: left;
+    width: 100%;
+}
+
+nav li a, nav li span {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+nav li a:hover, nav li span:hover {
+    background: #4abee0;
+}
+
+nav li a, nav li span {
+    font-size: 18px;
+    font-family: '微软雅黑';
+    color: white;
+}
+
+.borderRadiusTop, .borderRadiusTop a {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.borderRadiusBottom, .borderRadiusBottom span {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}

@@ -1,0 +1,150 @@
+/* 发布文章 */
+article {
+    float: left;
+    width: 803px;
+    margin-left: 25px;
+    border: 1px solid #95c7d6;
+    background: #0f8db2;
+    border-radius: 5px;
+}
+
+.arcBgWhite {
+    background: white;
+}
+
+.regUserCon1 {
+    width: 550px;
+    height: auto;
+    margin: 50px 0 0 50px;
+}
+
+.loginUserCon1 {
+    width: 500px;
+    margin: 50px 0 0 150px;
+}
+
+.loginUserCon1 .line span {
+    width: 130px;
+}
+
+.login .selectImg span {
+    font-size: 13px;
+    line-height: 28px;
+}
+
+#arcTitle, #arcBody {
+    font-size: 18px;
+    font-weight: normal;
+    font-family: '宋体';
+    outline: none;
+    text-indent: 0.5em;
+}
+
+#arcTitle {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #cecece;
+    margin: 0 0 20px 0;
+}
+
+.arcSp1 {
+    line-height: 38px;
+}
+
+#arcBody {
+    width: 596px;
+    height: 150px;
+    border: 1px solid #cecece;
+    resize: none;
+}
+
+.arcCon {
+    width: 100%;
+    height: auto;
+    margin: 20px 0 0 0;
+    box-sizing: border-box;
+    padding: 0 15px;
+}
+
+.arcCon .ArcDiv1 {
+    height: auto;
+}
+
+.arcCon .submit {
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0;
+    cursor: pointer;
+    margin: 15px 0 0 80px;
+    background: rgba(40%, 20%, 40%, 0.5);
+    border: none;
+    color: white;
+    outline: none;
+    text-align: center;
+}
+
+/* 首页文章显示 */
+.arcContent {
+    width: 100%;
+    height: auto;
+}
+
+.arcContent .arcBlock {
+    width: 773px;
+    height: auto;
+    margin: 15px;
+    background: white;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.arcContent h2, .arcContent h2 a {
+    line-height: 40px;
+    font-size: 35px;
+    color: rgb(70%, 30%, 40%);
+}
+
+.arcContent h2, .arcContent div {
+    float: left;
+    width: 100%;
+    margin: 15px 0 0 0;
+}
+
+.arcInfo {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.arcInfo span {
+    margin-right: 8px;
+}
+
+.userTT1 {
+    color: rgba(102, 105, 161, 0.8);
+}
+
+.userTT1:hover {
+    color: rgb(70%, 30%, 40%);
+}
+
+.arcContent .arcInfo_edit, .arcContent .arcInfo_edit2 {
+    width: auto;
+}
+
+.arcContent .arcInfo_edit2 {
+    float: right;
+}
+
+.arcContent .arcInfo_edit2 a {
+    color: gray;
+}
+
+.arcInfo tt, .arcContent .arcInfo a {
+    color: rgba(50%, 30%, 30%, 0.5);
+}
+
+.arcContent .arcInfo a, .arcContent .removeArcTT {
+    cursor: pointer;
+}

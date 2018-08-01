@@ -1,0 +1,39 @@
+.page {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.pageCenter {
+    margin: 0 auto;
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+}
+
+.page a, .pageCenter span {
+    float: left;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+}
+
+.pageCenter span {
+    color: white;
+    margin-left: 20px;
+}
+
+.page a {
+    color: white;
+    display: block;
+    width: auto;
+    padding: 0 10px;
+    background: #4abee0;
+    margin-right: 7px;
+}
+
+.page .NoFocus {
+    background: #ebeded;
+    color: #c7c7c7;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<%- include info %>
+
+<div class='center'>
+
+    <%- include nav %>
+
+    <article>
+
+        <div class="arcContent left">
+
+            <div class="arcBlock left">
+                <h2><%= posts.title %></h2>
+
+                <div class='arcInfo'>
+
+                    <% if(user == posts.name){ %>
+                    <div class="arcInfo_edit2 right">
+                        <span><a href='/editFind/<%= posts._id %>'>编辑</a></span>
+                        <span><tt re1='<%= posts._id %>' class='removeArcTT'>删除</tt></span>
+                    </div>
+                    <% } %>
+
+                    <div class="arcInfo_edit left">
+                    <span>
+                        <tt>作者：</tt>
+                        <a href='/arc/<%= posts.name %>' class='userTT1'
+                           authorArc='<%= posts._id %>'><%= posts.name %></a>
+                    </span>
+                        <span>|</span>
+                        <span><tt>日期：</tt><%= posts.time.minute %></span>
+                        <span><tt>回复：</tt><%= posts.reply ? posts.reply.length : 0 %></span>
+                        <span><tt>阅读：</tt><%= posts.pv %></span>
+                    </div>
+                </div>
+                <div class='arcBodyCon'><%- posts.text %></div>
+            </div>
+
+            <% if(user){ %>
+            <div class="Reply left">
+                <div class="Reply_title">回复：<span class='replyCol'><%= posts.name %></span></div>
+                <div class="Reply_body">
+                    <textarea name="" id="Reply_text" class="Reply_text"></textarea>
+                </div>
+                <div class="Reply_sub">
+                    <button class="ReplySubmit right">回复</button>
+                </div>
+            </div>
+            <% } %>
+
+            <div class="Reply_con left">
+
+                <% if (!posts.reply) {
+                    posts.reply = []
+                } %>
+                <% for(var a = posts.reply.length - 1;a >= 0;a--){ %>
+                <div class="ReplyCon_line left">
+                    <div class='ReplyCon_info left'>
+                        <div class="ReplyConInfo_line">
+                            <span class='replyCol'><%= posts.reply[a].replyUser %></span>说道：
+                        </div>
+                        <div class="ReplyConInfo_line2"><%= posts.reply[a].datetime %></div>
+                    </div>
+                    <div class='ReplyCon_text left'>
+                        <%= posts.reply[a].text %>
+                    </div>
+                </div>
+                <% } %>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</div>
+
+<%- include footer %>
+
+<script>
+
+    //首页限制图片大小
+    indexImgMax();
+
+    $(function () {
+        //删除文章
+        removeArc();
+
+        // 用户登出
+        logout();
+
+        //发布留言
+        replyAddAjax();
+    })
+</script>
+
+</body>
+</html>
+

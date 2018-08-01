@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Blog</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+
+<%- include info %>
+
+<div class='center'>
+
+    <%- include nav %>
+
+    <article class='arcBgWhite'>
+
+        <div class='login'>
+            <div class="loginRele">
+
+                <div class="regUserCon1 left">
+                    <div class='line'><span>用户名：</span><input type='text' value='' id='username'/></div>
+                    <div class='line'><span>密码：</span><input type='password' value='' id='password'/></div>
+                    <div class='line'><span>确认密码：</span><input type='password' value='' id='password_repeat'/></div>
+                    <div class='line'><span>邮箱：</span><input type='email' value='' id='email'/></div>
+                </div>
+
+                <div class="userImgPar">
+                    <div class='line left'>
+                        <div class="userImg left">
+                            <img class="userImgCon" src='/upload/images/userImg/default.png'/>
+                        </div>
+                    </div>
+                    <div class='line left'>
+                        <form action="javascript:;" enctype="multipart/form-data" method="post" id='frmUploadFile'>
+                            <label for="upload" class='selectImg left'>
+                                <span>选择图片</span>
+                                <input type="file" name="upload" multiple="multiple" id='upload'>
+                            </label>
+                            <button type="button" id='userImgSubmit' class='left'>开始上传</button>
+                        </form>
+                        <div class="regH2_new left">提示：不上传则使用系统默认头像</div>
+                    </div>
+                </div>
+
+                <div class='line'>
+                    <div class='submit'>注册</div>
+                </div>
+            </div>
+        </div>
+
+    </article>
+
+</div>
+
+<%- include footer %>
+
+<script>
+    $(function () {
+        //用户注册
+        regAjax();
+
+        //用户头像上传
+        uploadFile();
+    })
+</script>
+
+</body>
+</html>
+
+
