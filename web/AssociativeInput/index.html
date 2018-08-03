@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #search_word {
+            width: 300px;
+            height: 25px;
+            line-height: 25px;
+            border: none;
+            border-bottom: 1px solid #cecece;
+        }
+
+        .listShow {
+            width: 300px;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .listShow .line {
+            width: 100%;
+            border: 1px solid #e2e2e2;
+            box-sizing: border-box;
+            padding: 5px;
+            cursor: pointer;
+            color: rgb(37, 144, 194);
+        }
+
+        .listShow .line:hover {
+            border: 1px solid rgb(24, 207, 198);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="con">
+    <input type="text" id="search_word" autofocus/>
+</div>
+<div class="con">
+    <div class="listShow" id="listShow">
+        <div class="line">aaa</div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js"></script>
+<script src="jquery_associative_input.js"></script>
+<script>
+    $(function () {
+        $("#search_word").AssociativeInput("listShow");
+    });
+</script>
+</body>
+</html>
