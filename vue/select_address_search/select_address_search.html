@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 重写物流跟踪 */
+
+        .xo_select_box {
+            width: 100%;
+            float: left;
+            height: 32px;
+            width: 306px;
+            height: 28px;
+            box-sizing: border-box;
+        }
+
+        .xo_select_box .rele {
+            position: relative;
+            width: 100%;
+            height: 32px;
+            overflow: visible;
+        }
+
+        .xo_search_list,
+        .xo_search_list .line {
+            width: 100%;
+            height: 28px;
+            line-height: 28px;
+        }
+
+        .xo_search_list .line:hover {
+            background: #006d6a;
+            color: white;
+        }
+
+        .xo_search_list {
+            position: absolute;
+            top: 28px;
+            left: 0;
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            border: 1px solid #dcdcdc;
+            border-top: 0;
+            box-sizing: border-box;
+            background: white;
+            z-index: 999;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .xo_select_box .searchInput {
+            width: 100%;
+            height: 28px;
+            box-sizing: border-box;
+            border: 1px solid #dcdcdc;
+        }
+
+        .bottom_distance {
+            width: 100%;
+            height: 30px;
+            overflow: visible;
+        }
+
+        .input_title_style {
+            float: left;
+        }
+
+        /* 三级联动+搜索筛选 */
+
+        #selectSearch .block {
+            width: 85px;
+            height: 28px;
+            float: left;
+            margin-right: 10px;
+        }
+
+        #selectSearch .rele {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            overflow: visible;
+        }
+
+        #selectSearch .ipt1 {
+            width: 85px;
+            height: 28px;
+            line-height: 28px;
+            border: 1px solid rgb(226, 226, 226);
+            text-indent: 0.5em;
+            text-align: left;
+        }
+
+        #selectSearch .list {
+            position: absolute;
+            top: 28px;
+            left: 0;
+            width: 115px;
+            height: auto;
+            max-height: 200px;
+            overflow-y: auto;
+            background: white;
+        }
+
+        #selectSearch .listline {
+            width: 100%;
+            height: 28px;
+            line-height: 28px;
+            overflow: hidden;
+            text-indent: 0.5em;
+        }
+
+        #selectSearch .listline:hover {
+            background: #006d6a;
+            color: white;
+        }
+
+        #selectSearch .input_title_style_1 {
+            float: left;
+            line-height: 28px;
+        }
+
+        #selectSearch .block:nth-child(4) {
+            margin-right: 22px;
+        }
+
+        #selectSearch .input_title_style_2 {
+            margin-right: 12px;
+        }
+
+        .priceQuery,
+        .immediateQuery {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+<div class="bottom_distance" id="selectSearch">
+    <span class="input_title_style_1">发货地</span>
+
+    <div class="block">
+        <div class="rele">
+            <input type="text" id="selectSearch_form_province" class="ipt1" v-model="province1" placeholder="省"
+                   @input="filterFn($event,1)"
+                   @focus="province=province_default;showThisListFn($event);line_validate()"
+                   @blue="province=[];line_validate()"
+                    />
+
+            <div class="list">
+                <div class="listline" v-for="(val,index) in province" @click="listclickFn(1,val.name,val.id)">
+                    {{val.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div class="rele">
+            <input type="text" id="selectSearch_form_city" class="ipt1" v-model="city1" placeholder="市"
+                   @input="filterFn($event,2)" @focus="city=city_default;showThisListFn($event);line_validate()"
+                   @blue="city=[];line_validate();"/>
+
+            <div class="list">
+                <div class="listline" v-for="(val,index) in city" @click="listclickFn(2,val.name,val.id)">{{val.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div class="rele">
+            <input type="text" id="selectSearch_form_area" class="ipt1" v-model="area1" placeholder="区/县"
+                   @input="filterFn($event,3)"
+                   @focus="area=area_default;showThisListFn($event);line_validate()" @blue="area=[];line_validate();"/>
+
+            <div class="list">
+                <div class="listline" v-for="(val,index) in area" @click="listclickFn(3,val.name)">{{val.name}}</div>
+            </div>
+        </div>
+    </div>
+    <span class="input_title_style_1 input_title_style_2">目的地</span>
+
+    <div class="block">
+        <div class="rele">
+            <input type="text" id="selectSearch_to_province" class="ipt1" v-model="province2" placeholder="省"
+                   @input="filterFn($event,4)"
+                   @focus="province_to=province_default_to;showThisListFn($event);line_validate()"
+                   @blue="province_to=[];line_validate()"
+                    />
+
+            <div class="list">
+                <div class="listline" v-for="(val,index) in province_to" @click="listclickFn(4,val.name,val.id)">
+                    {{val.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div class="rele">
+            <input type="text" id="selectSearch_to_city" class="ipt1" v-model="city2" placeholder="市"
+                   @input="filterFn($event,5)" @focus="city_to=city_default_to;showThisListFn($event);line_validate()"
+                   @blue="city_to=[];line_validate()"/>
+
+            <div class="list">
+                <div class="listline" v-for="(val,index) in city_to" @click="listclickFn(5,val.name,val.id)">
+                    {{val.name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div class="rele">
+            <input type="text" id="selectSearch_to_area" class="ipt1" v-model="area2" placeholder="区/县"
+                   @input="filterFn($event,6)" @focus="area_to=area_default_to;showThisListFn($event);line_validate()"
+                   @blue="area_to=[];line_validate()"/>
+
+            <div class="list">
+                <div class="listline" v-for="(val,index) in area_to" @click="listclickFn(6,val.name)">{{val.name}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.5.6/vue.min.js"></script>
+<script>
+
+    //基础url
+    var getU = $("#mainArea").val() != undefined ? $("#mainArea").val() : "http://www.esgmallt.com";
+
+    //省市区三级联动+搜索筛选
+    var selectSearch = new Vue({
+        el: "#selectSearch",
+        data: function () {
+            return {
+                //始发地——省市区初始列表
+                province_default: [],
+                city_default: [],
+                area_default: [],
+                //目的地——省市区初始列表
+                province_default_to: [],
+                city_default_to: [],
+                area_default_to: [],
+                //始发地——省市区已选择的值
+                province1: null,
+                city1: null,
+                area1: null,
+                //目的地——省市区已选择的值
+                province2: null,
+                city2: null,
+                area2: null,
+                //始发地——省市区请求到的数据
+                province: [],
+                city: [],
+                area: [],
+                //目的地——省市区请求到的数据
+                province_to: [],
+                city_to: [],
+                area_to: [],
+                //总重量
+                volume: null,
+                //总体积
+                capacity: null,
+                //ajax请求url
+                baseUrl1: getU + "/reversionNewIndex/getAddress"
+            };
+        },
+        mounted: function () {
+            //初始化省份
+            this.getProvince();
+            //点击空白处关闭联想列表
+            this.closeList();
+        },
+        methods: {
+            //初始化省份
+            getProvince: function () {
+                var that = this;
+                $.post(that.baseUrl1, {id: 156}, function (data) {
+                    that.province_default = data.address;
+                    that.province_default_to = data.address;
+                    //console.log(JSON.stringify(that.province_default));
+                });
+            },
+            //获取市
+            getCity: function (id, to_flag) {
+                var that = this;
+                $.post(that.baseUrl1, {id: id}, function (data) {
+                    if (to_flag == "Y") {
+                        that.city_default_to = data.address;
+                        that.city_to = that.city_default_to;
+                        that.city2 = that.city_default_to[0].name;
+                    } else {
+                        that.city_default = data.address;
+                        that.city = that.city_default;
+                        that.city1 = that.city_default[0].name;
+                    }
+                    //console.log(JSON.stringify(that.city_default));
+                });
+            },
+            //获取区
+            getArea: function (id, to_flag) {
+                var that = this;
+                $.post(that.baseUrl1, {id: id}, function (data) {
+                    if (to_flag == "Y") {
+                        that.area_default_to = data.address;
+                        that.area_to = that.area_default_to;
+                        that.area2 = that.area_default_to[0].name;
+                    } else {
+                        that.area_default = data.address;
+                        that.area = that.area_default;
+                        that.area1 = that.area_default[0].name;
+                    }
+                    //console.log(JSON.stringify(that.city_default));
+                });
+            },
+            //获取与搜索词相关的数据
+            getFilterData: function (list, v) {
+                var arr = [];
+                for (var n = 0; n < list.length; n++) {
+                    var reg = new RegExp(v);
+                    //如果字符串中不包含目标字符会返回-1
+                    if (list[n].name.match(reg)) {
+                        arr.push(list[n]);
+                    }
+                }
+                //console.log(arr);
+                return arr;
+            },
+            //过滤数据
+            filterFn: function (e, index) {
+                //始发地——省
+                if (index == 1) {
+                    //筛选后的数据
+                    var getD1 = this.getFilterData(this.province_default, e.target.value);
+                    //重新赋值
+                    this.province = getD1;
+                } else if (index == 2) { //始发地——市
+                    //筛选后的数据
+                    var getD1 = this.getFilterData(this.city_default, e.target.value);
+                    //重新赋值
+                    this.city = getD1;
+                } else if (index == 3) { //始发地——区
+                    //筛选后的数据
+                    var getD1 = this.getFilterData(this.area_default, e.target.value);
+                    //重新赋值
+                    this.area = getD1;
+                } else if (index == 4) { //目的地——省
+                    //筛选后的数据
+                    var getD1 = this.getFilterData(this.province_default_to, e.target.value);
+                    //重新赋值
+                    this.province_to = getD1;
+                } else if (index == 5) { //目的地——市
+                    //筛选后的数据
+                    var getD1 = this.getFilterData(this.city_default_to, e.target.value);
+                    //重新赋值
+                    this.city_to = getD1;
+                } else if (index == 6) { //目的地——区
+                    //筛选后的数据
+                    var getD1 = this.getFilterData(this.area_default_to, e.target.value);
+                    //重新赋值
+                    this.area_to = getD1;
+                }
+            },
+            //list点击选中
+            listclickFn: function (flag, v, id) {
+                //省
+                if (flag == 1) {
+                    this.province1 = v;
+                    this.province = [];
+                    //获取市
+                    this.getCity(id);
+                } else if (flag == 2) {    //市
+                    this.city1 = v;
+                    this.city = [];
+                    //获取区
+                    this.getArea(id);
+                } else if (flag == 3) {    //区
+                    this.area1 = v;
+                    this.area = [];
+                } else if (flag == 4) {
+                    this.province2 = v;
+                    this.province_to = [];
+                    //获取市
+                    this.getCity(id, "Y");
+                } else if (flag == 5) {    //市
+                    this.city2 = v;
+                    this.city_to = [];
+                    //获取区
+                    this.getArea(id, "Y");
+                } else if (flag == 6) {    //区
+                    this.area2 = v;
+                    this.area_to = [];
+                }
+            },
+            //点击空白处关闭联想列表
+            closeList: function (e) {
+                //绑定整个dom
+                $(document).click(function (ee) {
+                    //如果点击的元素classname不是 .ipt1 则隐藏
+                    if ($((ee.target || ee.srcElement)).attr("class") != "ipt1") {
+                        $("#selectSearch .list").hide(); //要显示隐藏的节点
+                    }
+                });
+            },
+            //input获取焦点显示当前list
+            showThisListFn(e)
+    {
+        $((e.target || e.srcElement)).next(".list").show();
+    }
+    ,
+    //效验——线上发货所有项都填写能提交
+    line_validate: function (v) {
+        if (this.volume == "" || this.capacity == "" || this.province1 || this.city1 || this.area1 || this.province2 || this.city2 || this.area2) {
+            $(".priceQuery").removeAttr("disabled").addClass("active");
+        } else {
+            $(".priceQuery").attr("disabled", "true").removeClass('active');
+        }
+    }
+    }
+    })
+    ;
+</script>
+</body>
+
+</html>
